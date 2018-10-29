@@ -31,13 +31,30 @@ html, body {
 * {
   box-sizing: border-box; }
 
+@media all and (max-width: 992px) {
+  .container {
+    max-width: 100%;
+    padding: 0; } }
+
 header {
   background: #fff; }
   header nav {
-    padding: 0 2rem; }
+    padding: 0 15px; }
     header nav .navbar-brand {
       width: 40px;
-      height: 40px; }
+      height: 40px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; }
+    header nav .navbar-collapse {
+      text-transform: uppercase;
+      justify-content: flex-end; }
+
+.carousel-control-prev {
+  left: -30px; }
+
+.carousel-control-next {
+  right: -30px; }
 
 .carousel-control-prev-icon {
   background-image: url("../image/left-arrow.svg"); }
@@ -67,7 +84,7 @@ header {
 
 .logo {
   text-align: center;
-  padding: 4vmin 0;
+  padding: 4vmin 15px;
   background: white; }
   .logo h2 {
     text-transform: uppercase;
@@ -79,14 +96,15 @@ header {
   .logo span {
     width: 100px;
     height: 40px;
-    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     display: inline-block;
     margin: 0 5px; }
 
 .our-camp {
   text-align: center;
-  padding: 4vmin 0;
+  padding: 4vmin 15px;
   background: #949292; }
   .our-camp .title {
     width: 50%;
@@ -96,7 +114,7 @@ header {
       .our-camp .title {
         width: 80%; } }
   .our-camp .row {
-    max-width: calc(100% - 4rem);
+    max-width: calc(100% - $padding);
     margin: 0 auto; }
     .our-camp .row .card {
       padding: 0;
@@ -109,14 +127,14 @@ header {
 
 .testimonials {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 15px;
   background: #fff; }
   .testimonials h2 {
     text-transform: uppercase;
     margin-bottom: 2rem; }
   .testimonials .carousel .carousel-inner .carousel-item {
-    padding-left: 10%;
-    padding-right: 10%; }
+    padding-left: 8%;
+    padding-right: 8%; }
     .testimonials .carousel .carousel-inner .carousel-item .image {
       width: 100%;
       height: 100%;
@@ -130,6 +148,70 @@ header {
         line-height: 1;
         margin-bottom: 0; }
       .testimonials .carousel .carousel-inner .carousel-item .cap p {
-        font-size: 13px; }
+        font-size: 12px; }
+    @media all and (max-width: 768px) {
+      .testimonials .carousel .carousel-inner .carousel-item .row .row {
+        margin-top: 2rem; } }
+
+.journey {
+  background: #949292;
+  padding: 2rem 15px; }
+  .journey .row {
+    align-items: center; }
+    .journey .row .text h2 {
+      font-size: 24px;
+      text-transform: uppercase; }
+    .journey .row .text ul {
+      margin-bottom: 0.5em; }
+      .journey .row .text ul li {
+        margin-left: 1.3em;
+        font-size: 17px;
+        line-height: 1.1; }
+    .journey .row .text .btn {
+      text-transform: uppercase;
+      margin-top: 0.5em; }
+    @media all and (max-width: 576px) {
+      .journey .row .image {
+        margin-top: 1rem; } }
+    .journey .row .image img {
+      width: 100%;
+      height: auto; }
+
+footer {
+  font-size: 12px;
+  padding: 1rem 15px;
+  background: #fff; }
+  footer .footer-logo {
+    padding-left: 10%; }
+    @media all and (max-width: 576px) {
+      footer .footer-logo {
+        padding-left: 15px; } }
+    footer .footer-logo img {
+      width: 70px;
+      height: auto; }
+    footer .footer-logo p {
+      margin: 0;
+      font-size: 12px;
+      text-transform: capitalize; }
+  footer .menu {
+    text-transform: uppercase;
+    text-align: center; }
+    footer .menu span {
+      margin: 0 1vmin; }
+    @media all and (max-width: 576px) {
+      footer .menu {
+        text-align: left; }
+        footer .menu span {
+          display: block; } }
+  @media all and (max-width: 576px) {
+    footer .social {
+      margin-top: 0.5rem; } }
+  footer .social span {
+    text-transform: uppercase;
+    display: block; }
+  footer .social img {
+    width: 35px;
+    height: 35px;
+    display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */

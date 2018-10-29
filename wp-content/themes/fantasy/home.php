@@ -22,18 +22,43 @@
 	  <div class="carousel-inner">
 	    <div class="carousel-item active" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 	      <img class="d-block w-100" src="" alt="First slide">
+	      <div class="carousel-caption d-none d-md-block">
+		    <h5>What is Lorem Ipsum?</h5>
+		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		    <button class="btn">button</button>
+		  </div>
 	    </div>
-	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide2.jpg)">
+	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 	      <img class="d-block w-100" src="" alt="Second slide">
+	      <div class="carousel-caption d-none d-md-block">
+		    <h5>What is Lorem Ipsum?</h5>
+		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		    <button class="btn">button</button>
+		  </div>
 	    </div>
 	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 	      <img class="d-block w-100" src="" alt="Third slide">
+	      <div class="carousel-caption d-none d-md-block">
+		    <h5>What is Lorem Ipsum?</h5>
+		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		    <button class="btn">button</button>
+		  </div>
 	    </div>
-	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide2.jpg)">
+	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 	      <img class="d-block w-100" src="" alt="Four slide">
+	      <div class="carousel-caption d-none d-md-block">
+		    <h5>What is Lorem Ipsum?</h5>
+		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		    <button class="btn">button</button>
+		  </div>
 	    </div>
 	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 	      <img class="d-block w-100" src="" alt="Five slide">
+	      <div class="carousel-caption d-none d-md-block">
+		    <h5>What is Lorem Ipsum?</h5>
+		    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		    <button class="btn">button</button>
+		  </div>
 	    </div>
 	  </div>
 	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -98,7 +123,7 @@
 	     	<div class="row">
 	     		<div class="col-12 col-sm-12 col-md-6">
 	     			<div class="row">
-	     				<div class="col-4 col-sm-4">
+	     				<div class="col-4 col-sm-4 px-0">
 	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 			     			</div>
 	     				</div>
@@ -113,7 +138,7 @@
 
 	     		<div class="col-12 col-sm-12 col-md-6">
 	     			<div class="row">
-	     				<div class="col-4 col-sm-4">
+	     				<div class="col-4 col-sm-4 px-0">
 	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 			     			</div>
 	     				</div>
@@ -132,7 +157,7 @@
 	     	<div class="row">
 	     		<div class="col-12 col-sm-12 col-md-6">
 	     			<div class="row">
-	     				<div class="col-4 col-sm-4">
+	     				<div class="col-4 col-sm-4 px-0">
 	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 			     			</div>
 	     				</div>
@@ -147,7 +172,7 @@
 
 	     		<div class="col-12 col-sm-12 col-md-6">
 	     			<div class="row">
-	     				<div class="col-4 col-sm-4">
+	     				<div class="col-4 col-sm-4 px-0">
 	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 			     			</div>
 	     				</div>
@@ -166,7 +191,7 @@
 	     	<div class="row">
 	     		<div class="col-12 col-sm-12 col-md-6">
 	     			<div class="row">
-	     				<div class="col-4 col-sm-4">
+	     				<div class="col-4 col-sm-4 px-0">
 	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 			     			</div>
 	     				</div>
@@ -181,7 +206,7 @@
 
 	     		<div class="col-12 col-sm-12 col-md-6">
 	     			<div class="row">
-	     				<div class="col-4 col-sm-4">
+	     				<div class="col-4 col-sm-4 px-0">
 	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
 			     			</div>
 	     				</div>
@@ -207,7 +232,24 @@
 	  </a>
 	</div>
 </section>
+<section class="journey">
+	<div class="row d-flex">
+		<div class="col-12 col-sm-6 text">
+			<h2>Lorem Ipsum is simply dummy.</h2>
+			<ul>
+				<li>Lorem Ipsum is not simply random text</li>
+				<li>Lorem Ipsum is not simply random text</li>
+			</ul>
+			<div class="button">
+				<button class="btn">apply now</button>
+				<button class="btn">learn about our camp</button>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 image">
+			<img src="<?php bloginfo('template_url'); ?>/data/image/slide1.jpg">
+		</div>
+	</div>	
+</section>
 
-	
 <?php  get_footer(); ?>
 

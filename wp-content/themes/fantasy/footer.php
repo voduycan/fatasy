@@ -13,6 +13,7 @@
  */
 
 ?>
+</div>
 <!-- Boostrap -->
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/popper.min.js"></script>	
@@ -22,7 +23,6 @@
 <script src="<?php bloginfo('template_url'); ?>/data/js/slick_slider.js"></script>	
 
 <?php wp_footer(); ?>
-
 
 </body>
 </html>

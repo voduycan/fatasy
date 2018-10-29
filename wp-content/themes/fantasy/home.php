@@ -10,68 +10,204 @@
 ?>
 <?php  get_header(); ?>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+<section class="panel">
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	  <ol class="carousel-indicators">
+	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+	    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+	  </ol>
+	  <div class="carousel-inner">
+	    <div class="carousel-item active" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+	      <img class="d-block w-100" src="" alt="First slide">
+	    </div>
+	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide2.jpg)">
+	      <img class="d-block w-100" src="" alt="Second slide">
+	    </div>
+	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+	      <img class="d-block w-100" src="" alt="Third slide">
+	    </div>
+	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide2.jpg)">
+	      <img class="d-block w-100" src="" alt="Four slide">
+	    </div>
+	    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+	      <img class="d-block w-100" src="" alt="Five slide">
+	    </div>
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+</section>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
+<section class="logo">
+	<h2>taught by</h2>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+	<h2>our clients</h2>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+	<span style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)"></span>
+</section>
 
-	<h3>ssssssssss</h3>
-	<div class="slider slider-for">
-		<div>
-			<h3>1</h3>
-		</div>
-		<div>
-			<h3>2</h3>
-		</div>
-		<div>
-			<h3>3</h3>
-		</div>
-		<div>
-			<h3>4</h3>
-		</div>
-		<div>
-			<h3>5</h3>
+<section class="our-camp">
+	<div class="title">
+		<h2>What is Lorem Ipsum?</h2>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+	</div>
+	<div class="row">
+		<div class="card-deck">
+		  <div class="card">
+		    <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)" alt="Card image cap">
+		    <div class="card-body">
+		      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)" alt="Card image cap">
+		    <div class="card-body">
+		      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+		    </div>
+		  </div>
+		  <div class="card">
+		    <img class="card-img-top" src="<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)" alt="Card image cap">
+		    <div class="card-body">
+		      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+		    </div>
+		  </div>
 		</div>
 	</div>
-	<div class="slider slider-nav">
-		<div>
-			<h3>1</h3>
-		</div>
-		<div>
-			<h3>2</h3>
-		</div>
-		<div>
-			<h3>3</h3>
-		</div>
-		<div>
-			<h3>4</h3>
-		</div>
-		<div>
-			<h3>5</h3>
-		</div>
-	</div>
 
+</section>
+
+<section class="testimonials">
+	<h2>testimonials</h2>
+	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	  <div class="carousel-inner">
+	   <div class="carousel-item active">
+	     	<div class="row">
+	     		<div class="col-12 col-sm-12 col-md-6">
+	     			<div class="row">
+	     				<div class="col-4 col-sm-4">
+	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			     			</div>
+	     				</div>
+
+	     			<div class="col-8 col-sm-8 cap">
+	     				<h3>full name</h3>
+	     				<span>company</span>
+	     				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+	     			</div>
+	     			</div>
+	     		</div>
+
+	     		<div class="col-12 col-sm-12 col-md-6">
+	     			<div class="row">
+	     				<div class="col-4 col-sm-4">
+	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			     			</div>
+	     				</div>
+	     			
+	     			<div class="col-8 col-sm-8 cap">
+	     				<h3>full name</h3>
+	     				<span>company</span>
+	     				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+	     			</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+
+	    <div class="carousel-item">
+	     	<div class="row">
+	     		<div class="col-12 col-sm-12 col-md-6">
+	     			<div class="row">
+	     				<div class="col-4 col-sm-4">
+	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			     			</div>
+	     				</div>
+	     			
+	     			<div class="col-8 col-sm-8 cap">
+	     				<h3>full name</h3>
+	     				<span>company</span>
+	     				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+	     			</div>
+	     			</div>
+	     		</div>
+
+	     		<div class="col-12 col-sm-12 col-md-6">
+	     			<div class="row">
+	     				<div class="col-4 col-sm-4">
+	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			     			</div>
+	     				</div>
+	     			
+	     			<div class="col-8 col-sm-8 cap">
+	     				<h3>full name</h3>
+	     				<span>company</span>
+	     				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+	     			</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+
+	   <div class="carousel-item">
+	     	<div class="row">
+	     		<div class="col-12 col-sm-12 col-md-6">
+	     			<div class="row">
+	     				<div class="col-4 col-sm-4">
+	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			     			</div>
+	     				</div>
+	     			
+	     			<div class="col-8 col-sm-8 cap">
+	     				<h3>full name</h3>
+	     				<span>company</span>
+	     				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+	     			</div>
+	     			</div>
+	     		</div>
+
+	     		<div class="col-12 col-sm-12 col-md-6">
+	     			<div class="row">
+	     				<div class="col-4 col-sm-4">
+	     					<div class="image" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			     			</div>
+	     				</div>
+	     			
+	     			<div class="col-8 col-sm-8 cap">
+	     				<h3>full name</h3>
+	     				<span>company</span>
+	     				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+	     			</div>
+	     			</div>
+	     		</div>
+	     	</div>
+	    </div>
+	    
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+</section>
+
+	
 <?php  get_footer(); ?>
 

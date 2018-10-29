@@ -32,49 +32,31 @@
 <!-- Custom Css -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/data/scss/main.css">
 
-<style type="text/css">
-	    html, body {
-	      margin: 0;
-	      padding: 0;
-	    }
-
-	    * {
-	      box-sizing: border-box;
-	    }
-
-	    .slider {
-	        width: 50%;
-	        margin: 100px auto;
-	    }
-
-	    .slick-slide {
-	      margin: 0px 20px;
-	    }
-
-	    .slick-slide img {
-	      width: 100%;
-	    }
-
-	    .slick-prev:before,
-	    .slick-next:before {
-	      color: black;
-	    }
-
-
-	    .slick-slide {
-	      transition: all ease-in-out 0.3s;
-	      opacity: 0.2;
-	    }
-	    
-	    .slick-active {
-	      opacity: 0.5;
-	    }
-
-	    .slick-current {
-	      opacity: 1;
-	    }
-  	</style>
-
 </head>
 
 <body <?php body_class(); ?>>
+<div class="container">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand background-image" href="#" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-flex-end uppercase" id="navbarSupportedContent">
+				<ul class="navbar-nav ">
+				  <li class="nav-item active">
+				    <a class="nav-link" href="#">home</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">products</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">faq/about us</a>
+				  </li>
+				  
+				</ul>
+			</div>
+		</nav>
+	</header>

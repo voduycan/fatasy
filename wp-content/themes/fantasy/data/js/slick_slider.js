@@ -15,8 +15,4 @@ $(function() {
 		centerMode: true,
 		focusOnSelect: true
 	});
-	$('.slick-next').addClass('icon-right');
-   	$('.slick-prev').addClass('icon-left');
-   	$('.slick-dots').addClass('d-none');
-   	$('.slider-for').addClass('zzzzzz');
 });

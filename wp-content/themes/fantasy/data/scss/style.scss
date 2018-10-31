@@ -17,6 +17,7 @@ h3{
     text-transform: uppercase;
     font-size: $size-h3;
 }
+
 .container{
     @media all and (max-width: 992px){
         max-width: 100%;
@@ -150,11 +151,11 @@ header{
         }
         .slick-prev{
            left: -15px;
-            z-index: 100;
+            z-index: $Z-index1;
         }
         .slick-next{
            right: -15px;
-            z-index: 100;
+            z-index: $Z-index1;
         }
         .row{
             margin: 0;
@@ -262,6 +263,181 @@ footer{
             width: 35px;
             height: 35px;
             display: inline-block;
+        }
+    }
+}
+.curriculum{
+    padding: 3rem $padding;
+    background: $bg-white;
+    .foundation{
+        margin: 1rem 0;
+        .slick-prev{
+            z-index: $Z-index1;
+            left: 0;
+            &::before{
+                color: $color-active;
+            }
+        }
+        .slick-next{
+           right: 0;
+            z-index: $Z-index1;
+            &::before{
+                color: $color-active;
+            }
+        }
+        .slick-slide{
+            img{
+                width: 100%;
+            }
+            .card-body{
+                .card-title{
+                    position: absolute;
+                    top: 1em;
+                    left: 1em;
+                }
+            }
+        }
+    }
+}
+.blockchain{
+    padding: 3rem $padding;
+    background: $bg-gray;
+    text-align: center;
+    h2{
+        width: 60%;
+        line-height: 1.3;
+        margin: 0 auto 2rem;
+    }
+    iframe{
+        margin: 0;
+        border: 0;
+    }
+}
+.our-staff{
+    padding: 3rem $padding;
+    background: $bg-white;
+    h2{
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    .staff{
+        .slick-prev{
+            z-index: $Z-index1;
+            left: -15px;
+            &::before{
+                color: $color-active;
+            }
+        }
+        .slick-next{
+           right: -15px;
+            z-index: $Z-index1;
+            &::before{
+                color: $color-active;
+            }
+        }
+        .card{
+            background: none;
+            border: none;
+            .top{
+                height: 4.5em;
+                position: relative;
+                padding-left: 6rem;
+                img{
+                    position: absolute;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    left: 0;
+                    top: 0;
+                }
+                .info{
+                    h3{
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+.trips{
+    position: relative;
+    padding: 3rem 0;
+    h2{
+        text-align: center;
+    }
+    .slider {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out 0.3s;
+      opacity: 0.2;
+    }
+
+    .slick-active {
+      opacity: 0.5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+    .slick-dots{
+        display: none !important;
+    }
+    .image-for{
+        @include background-image;
+            height: 60vmin;
+    }
+    .image-nav{
+        @include background-image;
+        height: 15vmin;
+    }
+    .slider-for{
+        .slick-slide {
+          margin: 0px;
+        }
+    }
+    .slick-prev{
+        z-index: $Z-index1;
+        left: 0;
+        &::before{
+            color: $color-active;
+        }
+    }
+    .slick-next{
+        right: 0;
+        z-index: $Z-index1;
+        &::before{
+            color: $color-active;
+        }
+    }
+}
+.faq{
+    h2{
+        text-align: center;
+    }
+    .group{
+        margin-bottom: 1rem;
+        button{
+            width: 100%;
+            background: $bg-gray;
+            text-align: left;
         }
     }
 }

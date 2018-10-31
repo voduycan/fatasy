@@ -208,4 +208,127 @@ footer {
     height: 35px;
     display: inline-block; }
 
+.curriculum {
+  padding: 3rem 15px;
+  background: #fff; }
+  .curriculum .foundation {
+    margin: 1rem 0; }
+    .curriculum .foundation .slick-prev {
+      z-index: 100;
+      left: 0; }
+      .curriculum .foundation .slick-prev::before {
+        color: gray; }
+    .curriculum .foundation .slick-next {
+      right: 0;
+      z-index: 100; }
+      .curriculum .foundation .slick-next::before {
+        color: gray; }
+    .curriculum .foundation .slick-slide img {
+      width: 100%; }
+    .curriculum .foundation .slick-slide .card-body .card-title {
+      position: absolute;
+      top: 1em;
+      left: 1em; }
+
+.blockchain {
+  padding: 3rem 15px;
+  background: #949292;
+  text-align: center; }
+  .blockchain h2 {
+    width: 60%;
+    line-height: 1.3;
+    margin: 0 auto 2rem; }
+  .blockchain iframe {
+    margin: 0;
+    border: 0; }
+
+.our-staff {
+  padding: 3rem 15px;
+  background: #fff; }
+  .our-staff h2 {
+    text-align: center;
+    margin-bottom: 1em; }
+  .our-staff .staff .slick-prev {
+    z-index: 100;
+    left: -15px; }
+    .our-staff .staff .slick-prev::before {
+      color: gray; }
+  .our-staff .staff .slick-next {
+    right: -15px;
+    z-index: 100; }
+    .our-staff .staff .slick-next::before {
+      color: gray; }
+  .our-staff .staff .card {
+    background: none;
+    border: none; }
+    .our-staff .staff .card .top {
+      height: 4.5em;
+      position: relative;
+      padding-left: 6rem; }
+      .our-staff .staff .card .top img {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        left: 0;
+        top: 0; }
+      .our-staff .staff .card .top .info h3 {
+        text-transform: capitalize; }
+
+.trips {
+  position: relative;
+  padding: 3rem 0; }
+  .trips h2 {
+    text-align: center; }
+  .trips .slider {
+    width: 100%;
+    margin: 20px auto; }
+  .trips .slick-slide {
+    margin: 0px 20px; }
+  .trips .slick-slide img {
+    width: 100%; }
+  .trips .slick-prev:before,
+  .trips .slick-next:before {
+    color: black; }
+  .trips .slick-slide {
+    transition: all ease-in-out 0.3s;
+    opacity: 0.2; }
+  .trips .slick-active {
+    opacity: 0.5; }
+  .trips .slick-current {
+    opacity: 1; }
+  .trips .slick-dots {
+    display: none !important; }
+  .trips .image-for {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vmin; }
+  .trips .image-nav {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 15vmin; }
+  .trips .slider-for .slick-slide {
+    margin: 0px; }
+  .trips .slick-prev {
+    z-index: 100;
+    left: 0; }
+    .trips .slick-prev::before {
+      color: gray; }
+  .trips .slick-next {
+    right: 0;
+    z-index: 100; }
+    .trips .slick-next::before {
+      color: gray; }
+
+.faq h2 {
+  text-align: center; }
+.faq .group {
+  margin-bottom: 1rem; }
+  .faq .group button {
+    width: 100%;
+    background: #949292;
+    text-align: left; }
+
 /*# sourceMappingURL=main.css.map */

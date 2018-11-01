@@ -1,9 +1,0 @@
-@mixin background-image(){
- 	background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-@mixin translateY($y){
-    -webkit-transform: translateY($y);
-    transform: translateY($y);
-}

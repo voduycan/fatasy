@@ -1,0 +1,26 @@
+@mixin background-image(){
+ 	background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+@mixin translateY($y){
+    -webkit-transform: translateY($y);
+    transform: translateY($y);
+}
+@mixin translate($x,$y){
+    -webkit-transform: translate($x,$y);
+    transform: translate($x,$y);
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+          transition: $transition;
+}
+@mixin scale($s){
+	-ms-transform: scale($s); /* IE 9 */
+    -webkit-transform: scale($s); /* Safari */
+    transform: scale($s); 
+}
+@mixin opacify($x){
+    opacity: $x;
+    filter: alpha(opacity= $x * 100);
+}

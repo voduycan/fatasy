@@ -77,5 +77,12 @@ $(function() {
 		}
 		
 	});
-	
+
+	$(document).ready(function (){
+        $("#scroll-down").click(function() {
+            $('html, body').animate({
+                scrollTop: $(".our-client").offset().top
+            }, 1000);
+        });
+    });
 });

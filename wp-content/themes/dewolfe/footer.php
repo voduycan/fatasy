@@ -15,11 +15,12 @@
 ?>
 <footer>
 	<div class="row">
-		<div class="col-6 col-sm-3 footer-logo">
+		<div class="col-12 col-sm-3 footer-logo">
 			<a href="#"><img src="<?php bloginfo('template_url'); ?>/data/image/svg/logo_navy.svg"></a>
+			<a class="email" href="mailto:edu@dewolfe.io">edu@dewolfe.io</a>
 			
 		</div>
-		<div class="col-6 col-sm-6 menu">
+		<div class="col-12 col-sm-6 menu d-flex">
 			<ul>
 				<li><a href="<?php bloginfo('url'); ?>/home">home</a></li>
 				<li><a href="<?php bloginfo('url'); ?>/product">products</a></li>
@@ -27,12 +28,12 @@
 			</ul>
 			
 		</div>
-		<div class="col-6 col-sm-3 social d-flex">
+		<div class="col-12 col-sm-3 social d-flex">
 			<a href="#"><span class="icon-facebook"></span></a>
 			<a href="#"><span class="icon-twitter"></span></a>
 			<a href="#"><span class="icon-instagram"></span></a>
 		</div>
-		<div class="col-6 col-sm-12 copy-right">
+		<div class="col-12 col-sm-12 copy-right">
 			<p>copyright <span class="icon-copyright"></span> 2018. dewolfe all right reseved</p>
 		</div>
 

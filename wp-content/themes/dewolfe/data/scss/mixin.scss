@@ -24,3 +24,8 @@
     opacity: $x;
     filter: alpha(opacity= $x * 100);
 }
+@mixin fit-content(){
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content
+}

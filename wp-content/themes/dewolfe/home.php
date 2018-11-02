@@ -69,6 +69,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  <button id="scroll-down">scroll down</button>
 </section>
 <!-- End Top panel -->
 <!-- Our client -->
@@ -126,8 +127,7 @@
 <!-- End Our Camp -->
 <!-- Testimonials -->
 <section class="testimonials">
-	<img class="background" src="<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg">
-	<div class="background"></div>
+	<div class="background" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg');"></div>
 	<h2>testimonials</h2>
 	<div class="autoplay slider">
 	    <div>
@@ -243,7 +243,7 @@
 </section>
 <!-- End Testimonials -->
 <!-- Journey -->
-<section class="journey">
+<section class="journey" style="background-image: url('http://localhost/dewolfe/wp-content/themes/dewolfe/data/image/png/ready_for_journey.png')">
 	<div class="row d-flex">
 		<div class="col-12 col-sm-6 text">
 			<h2>READY FOR A JOURNEY OF a LIFETIME ?</h2>
@@ -258,7 +258,8 @@
 		</div>
 		<div class="col-12 col-sm-6 image" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/ready_for_journey.png');">
 		</div>
-	</div>	
+	</div>
+	<div class="background" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg');"></div>	
 </section>
 <!-- End Journey -->
 <?php  get_footer(); ?>

@@ -39,7 +39,8 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<a class="navbar-brand" href="#">
-				<img src="<?php bloginfo('template_url'); ?>/data/image/svg/logo_white.svg">
+				<img class="logo-normal" src="<?php bloginfo('template_url'); ?>/data/image/png/logo_white.png">
+				<img class="logo-fixed" src="<?php bloginfo('template_url'); ?>/data/image/png/logo_navy.png">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<img src="<?php bloginfo('template_url'); ?>/data/image/svg/menu.svg">

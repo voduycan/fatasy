@@ -16,7 +16,7 @@
 <footer>
 	<div class="row">
 		<div class="col-12 col-sm-3 footer-logo">
-			<a href="#"><img src="<?php bloginfo('template_url'); ?>/data/image/svg/logo_navy.svg"></a>
+			<a href="#"><img src="<?php bloginfo('template_url'); ?>/data/image/png/logo_navy.png"></a>
 			<a class="email" href="mailto:edu@dewolfe.io">edu@dewolfe.io</a>
 			
 		</div>

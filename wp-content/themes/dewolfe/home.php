@@ -12,6 +12,12 @@
 
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<div class="caption d-none d-md-block">
+	    <h1>blockchain winter camp</h1>
+	    <p>2 weeks of winter courses and fun, in an amazing country.</p>
+	    <button class="btn">take your first step</button>
+	  </div>
+
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -22,43 +28,18 @@
   <div class="carousel-inner">
     <div class="carousel-item active" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
       <img class="d-block w-100" src="" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>blockchain winter camp</h5>
-	    <p>2 weeks of winter courses and fun, in an amazing country.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
     </div>
     <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
       <img class="d-block w-100" src="" alt="Second slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>blockchain winter camp</h5>
-	    <p>2 weeks of winter courses and fun, in an amazing country.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
     </div>
     <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
       <img class="d-block w-100" src="" alt="Third slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>blockchain winter camp</h5>
-	    <p>2 weeks of winter courses and fun, in an amazing country.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
     </div>
     <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
       <img class="d-block w-100" src="" alt="Four slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>blockchain winter camp</h5>
-	    <p>2 weeks of winter courses and fun, in an amazing country.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
     </div>
     <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
       <img class="d-block w-100" src="" alt="Five slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>blockchain winter camp</h5>
-	    <p>2 weeks of winter courses and fun, in an amazing country.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -69,24 +50,20 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-  <button id="scroll-down">scroll down</button>
+  <button id="scroll-down">Scroll down</button>
 </section>
 <!-- End Top panel -->
 <!-- Our client -->
 <section class="our-client">
-	<div class="taught">
-		<h2>taught by</h2>
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/by_harvard.png" alt="">
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/by_mit.png" alt="">
-	</div>
-	<div class="client">
-		<h2>our clients</h2>
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/clients_seeroo.png" alt="">
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/clietns_icce.png" alt="">
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/clients_mondrian.png" alt="">
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/clients_kis.png" alt="">
-		<img src="<?php bloginfo('template_url'); ?>/data/image/png/clients_yonsei.png" alt="">
-	</div>
+	<h2>taught by</h2>
+	<img class="taught" src="<?php bloginfo('template_url'); ?>/data/image/png/by_harvard.png" alt="">
+	<img class="taught" src="<?php bloginfo('template_url'); ?>/data/image/png/by_mit.png" alt="">
+	<h2>our clients</h2>
+	<img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_seeroo.png" alt="">
+	<img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clietns_icce.png" alt="">
+	<img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_mondrian.png" alt="">
+	<img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_kis.png" alt="">
+	<img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_yonsei.png" alt="">
 </section>
 <!-- End Our client -->
 <!-- Our Camp -->
@@ -127,7 +104,8 @@
 <!-- End Our Camp -->
 <!-- Testimonials -->
 <section class="testimonials">
-	<div class="background" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg');"></div>
+	<!-- <div class="background" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg');"></div> -->
+	<img  class="background" src="<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg">
 	<h2>testimonials</h2>
 	<div class="autoplay slider">
 	    <div>

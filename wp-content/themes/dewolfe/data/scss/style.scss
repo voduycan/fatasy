@@ -12,7 +12,7 @@ h2{
     line-height: 1;
     text-transform: uppercase;
     font-size: $size-h2;
-    font-weight: bold;
+    font-weight: $weight-7;
     @media all and (max-width: 576px){
         font-size: $size-h2 - 8;
     }
@@ -20,11 +20,20 @@ h2{
 h3{
     line-height: 1;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: $weight-7;
     font-size: $size-h3;
 }
 a:focus, button:focus{
     outline: 0;
+}
+section{
+    padding: 2rem $padding;
+    @media all and (max-width: 992px){
+        padding: 2rem $padding-tablet;
+    }
+    @media all and (max-width: 576px){
+        padding: 2rem $padding-mobile;
+    }
 }
 #scroll-down{
     position: absolute;
@@ -32,15 +41,25 @@ a:focus, button:focus{
     left: 50%;
     @include translate(-50%,0);
     background: none;
-    text-transform: capitalize;
     font-size: $size-normal - 2;
     color: $color-gray;
+    font-weight: $weight-1;
     @media all and (max-width: 576px){
         display: none;
     }
 } 
+
+.ha-header-hide {
+    @include animation(to-top 0.2s ease-in-out);
+}
+.ha-header-show {
+    @include animation(to-down 0.2s ease-in-out);
+}
 .btn:hover{
     @include opacify(0.8);
+}
+button:hover{
+     box-shadow: 0px 15px 10px 0px $button-shadow;
 }
 .container{
     position: relative;
@@ -54,6 +73,7 @@ a:focus, button:focus{
     }
 }
 header{
+    margin-top: 1em;
     background: transparent;
     padding: 0 $padding;
     position: absolute;
@@ -68,6 +88,7 @@ header{
     @media all and (max-width: 576px){
         padding: 0 $padding-mobile;
     }
+
     nav.navbar{
         padding-left: 0;
         padding-right: 0;
@@ -76,12 +97,20 @@ header{
             height: auto;
             padding: 0;
             @media all and (max-width: 576px){
-                width: 60px;
+                width: 70px;
             }
+            img{
+                width: 100%;
+            }
+            .logo-fixed{
+                display: none;
+            }
+
         }
         .navbar-toggler{
             border: 0;
             padding: 0;
+            @include translateY(-50%);
             &:hover{
                 background: none;
             }
@@ -101,6 +130,7 @@ header{
                 .nav-link{
                     color: $color-white;
                     font-size: $size-normal;
+                    @include transition(all 0.2s ease-in-out);
                     @media all and (max-width: 992px){
                         text-align: right;
                         &:hover{
@@ -114,8 +144,9 @@ header{
                         content: '';                     
                         position: absolute;
                         bottom: 0.25rem;
-                        left: 25%;
-                        width: 50%;
+                        width: 40%;
+                        left: 50%;
+                        @include translate(-50%,0);
                         @include transition(all 0.2s ease-in-out);
                      }
                      &:focus{
@@ -143,6 +174,54 @@ header{
                 
 
             }
+        }
+    }
+    &.to-fixed{
+        @media all and (min-width: 992px){
+            position: fixed;    
+            margin-top: 0;
+            background: $bg-white;
+            border: 1px solid $border-header;
+            nav.navbar{
+                .navbar-brand{
+                    .logo-fixed{
+                        display: block;
+                    }
+                    .logo-normal{
+                        display: none;
+                    }
+                }
+                .navbar-nav{
+                    .nav-item{
+                        .nav-link{
+                           font-size: $size-normal - 1;
+                            color: $color-black-light;
+                             &::after{
+                                content: '';                     
+                                position: absolute;
+                                bottom: 0.25rem;
+                                left: 25%;
+                                width: 50%;
+                                @include transition(all 0.2s ease-in-out);
+                             }
+                             &:focus{
+                                outline: 0;
+                                color: $color-blue;
+
+                            }
+                        }
+                        &.active, &:hover{
+                            .nav-link{
+                                color: $color-blue;
+                                position: relative;
+                                &::after{
+                                    border-bottom: 1px solid $color-blue; 
+                                }
+                            }
+                        }
+                    }
+                }
+            }   
         }
     }
     
@@ -233,8 +312,7 @@ footer{
             font-size: $size-normal - 1;
             text-transform: capitalize;
             margin-top: -1.5rem;
-            @include fit-content;
-            width: -webkit-fit-content;
+            @include fit-content-width;
             margin-left: auto;
             margin-right: auto;
             .icon-copyright{
@@ -264,28 +342,21 @@ footer{
     }
 }
 .carousel-control-prev{
-    left: 0;
-    span{
-        @include translate(-200%,250%);
-        @media all and (max-width: 992px){
-            @include translate(-100% ,250%);
-        }
-        @media all and (max-width: 576px){
-            @include translate(0 ,250%);
-        }
+    left: 20px;
+    top: 60%;
+    @include fit-content-height;
+    @include fit-content-width;
+    @media all and (max-width: 576px){
+        top: 55%;
     }
-    
 }
 .carousel-control-next{
-    right: 0;
-    span{
-         @include translate(200%,250%);
-         @media all and (max-width: 992px){
-            @include translate(100% ,250%);
-        }
-        @media all and (max-width: 576px){
-            @include translate(0 ,250%);
-        }
+    top: 60%;
+    right: 20px;
+    @include fit-content-height;
+    @include fit-content-width;
+    @media all and (max-width: 576px){
+        top: 55%;
     }
     
 }
@@ -299,82 +370,106 @@ footer{
     width: 80%;
 }
 #carouselExampleIndicators{
+    padding: 0;
+    .caption{
+        text-align: left;
+        position: absolute;
+        z-index: $Z-index1;
+        color: $color-white;
+        top: 60%;
+        left: $padding;
+        @media all and (max-width: 992px){
+            left: $padding-tablet;
+        }
+        @media all and (max-width: 576px){
+            left: $padding-mobile;
+        }
+        @include translateY(-50%);
+        &.d-none{
+            display: block !important;
+        }
+        ul{
+            li{
+                margin-left: 1.3em;
+                font-size: $size-small;
+            }
+        }
+        p{
+            font-size: $size-normal;
+        }
+        button{
+            text-transform: uppercase;
+            font-size: $size-normal - 2;
+            background: $bg-blue;
+            border-radius: 7px;
+            padding: 0.75rem 2rem;
+            font-weight: $weight-7;
+        }
+        h1{
+            font-size: $size-h2 + 8;
+            font-weight: $weight-7;
+            letter-spacing: 0;
+            font-family: $montserrat;
+            text-transform: uppercase;
+        }
+        @media all and (max-width: 576px){
+            text-align: center;
+            top: 55%;
+            left: 0;
+            width: 100%;
+            h1{
+                font-size: $size-h2 - 4;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p{
+                font-size: $size-normal - 2; 
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            button{
+                font-size: $size-normal - 2;
+            }
+        }
+
+    }
     .carousel-item{
         @include background-image;
         img{
             visibility: hidden;
             width: 100%;
-            height: 100vmin;
+            height: 100vh;
         }
-        .carousel-caption{
-            text-align: left;
-            top: 60%;
-            left: $padding;
-            @include translateY(-50%);
-            &.d-none{
-                display: block !important;
-            }
-            ul{
-                li{
-                    margin-left: 1.3em;
-                    font-size: $size-small;
-                }
-            }
-            p{
-                font-size: $size-normal;
-            }
-            button{
-                text-transform: uppercase;
-                font-size: $size-normal;
-                background: $bg-blue;
-                border-radius: 7px;
-            }
-            h5{
-                font-size: $size-h2 + 8;
-                font-weight: bold;
-                letter-spacing: 0;
-            }
-            @media all and (max-width: 576px){
-                text-align: center;
-                top: 50%;
-                left: 0;
-                width: 100%;
-                h5{
-                    font-size: $size-h2 - 4;
-                    width: 80%;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                p{
-                    font-size: $size-normal - 2; 
-                    width: 70%;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                button{
-                    font-size: $size-normal - 2;
-                }
-            }
-
-        }
+        
     }
     .carousel-indicators{
         justify-content: flex-start;
+        align-items: center;
         margin-left: $padding;
         bottom: 15%;
+        @media all and (max-width: 992px){
+            margin-left: $padding-tablet;
+            bottom: 13%;
+        }
+        
         @media all and (max-width: 576px){
             justify-content: center;
             margin-left: 15%;
             bottom: 0;
         }
         li{
-            width: 7px;
-            height: 7px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: $bg-white;
             margin: 0px 5px;
+            background: $color-active;
             &.active{
-                background: $color-active;
+                background: $color-white;
+                width: 16px; 
+                height: 16px;
             }
         }
 
@@ -382,14 +477,9 @@ footer{
 }
 .our-client{
     text-align: center;
-    padding: 2rem $padding;
+    
     background: $bg-white;
-    @media all and (max-width: 992px){
-        padding: 2rem $padding-tablet;
-    }
-    @media all and (max-width: 576px){
-        padding: 2rem $padding-mobile;
-    }
+
     h2{
         padding-top: 0;
         margin: 2rem 0;
@@ -398,40 +488,51 @@ footer{
         }
     }
     .taught{
-        margin: 2rem 0;
-        img{
-            width: 35vmin;
-            height: auto;
-            display: inline-block;
-            margin: 0 5vmin;
+        width: 265px;
+        height: auto;
+        display: inline-block;
+        margin: 0 50px;
+        &:nth-child(2){
+            margin-left: 0;
+        }
+        &:nth-child(3){
+            margin-right: 0;
         }
     }
     .client{
-        margin: 3rem 0 2rem;
-        img{
-            width: 25vmin;
-            height: auto;
-            display: inline-block;
-            margin: 0 2vmin 2vmin;
+        width: 198px;
+        height: auto;
+        display: inline-block;
+        margin: 0 20px 20px;
+    }
+     @media all and (max-width: 768px){
+        .taught{
+            margin: 0 30px;
+            width: 190px;
+        }
+        .client{
+            width: 175px;
+        }
+    }
+    @media all and (max-width: 576px){
+        .taught{
+            width: 133px;
+        }
+        .client{
+            width: 166px;
         }
     }
 }
 .our-camp{
     text-align: center;
-    padding: 2rem $padding;
     background: $bg-blue-light;
-     @media all and (max-width: 992px){
-        padding: 2rem $padding-tablet;
-    }
-    @media all and (max-width: 576px){
-        padding: 2rem $padding-mobile;
-    }
     .title{
-        width: 50%;
+        width: 80%;
         margin: 0 auto;
         margin-bottom: 2rem;
         p{
             font-size: $size-normal;
+            margin-bottom: 2rem;
         }
         @media all and (max-width: 768px){
             width: 85%;
@@ -516,19 +617,12 @@ footer{
 }
 .testimonials{
     text-align: center;
-    padding: 2rem $padding;
     position: relative;
     background: $bg-blue;
     color: $color-white;
-    @media all and (max-width: 992px){
-        padding: 2rem $padding-tablet;
-    }
-    @media all and (max-width: 576px){
-        padding: 2rem $padding-mobile;
-    }
     .background{
         width: 60%;
-        height: 90%;
+        height: auto;
         position: absolute;
         top: 0;
         right: 0;
@@ -538,7 +632,7 @@ footer{
             height: 50%;
         }
         
-        @include background-image;
+        // @include background-image;
     }
     h2{
         margin-bottom: 2rem;
@@ -619,13 +713,6 @@ footer{
         left: 0;
         z-index: -1;
     }
-    padding: $padding;
-    @media all and (max-width: 992px){
-        padding: $padding-tablet + 15;
-    }
-    @media all and (max-width: 576px){
-        padding: $padding-mobile + 15;
-    }
     .row{
         align-items: center;
         background: $bg-white;
@@ -695,7 +782,6 @@ footer{
 }
 
 .curriculum{
-    padding: 3rem $padding;
     background: $bg-white;
     .foundation{
         margin: 1rem 0;
@@ -728,7 +814,6 @@ footer{
     }
 }
 .blockchain{
-    padding: 3rem $padding;
     background: $bg-gray;
     text-align: center;
     h2{
@@ -742,7 +827,6 @@ footer{
     }
 }
 .our-staff{
-    padding: 3rem $padding;
     background: $bg-white;
     h2{
         text-align: center;
@@ -790,7 +874,6 @@ footer{
 }
 .trips{
     position: relative;
-    padding: 3rem 0;
     h2{
         text-align: center;
     }

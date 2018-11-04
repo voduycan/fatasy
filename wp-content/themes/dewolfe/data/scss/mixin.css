@@ -26,5 +26,35 @@
   100% {
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%); } }
+@keyframes width {
+  0% {
+    width: 0%; }
+  100% {
+    width: 40%; } }
+@-webkit-keyframes width {
+  0% {
+    width: 0%; }
+  100% {
+    width: 40%; } }
+@keyframes width-out {
+  0% {
+    width: 40%; }
+  100% {
+    width: 0%; } }
+@-webkit-keyframes width-out {
+  0% {
+    width: 40%; }
+  100% {
+    width: 0%; } }
+@keyframes width-small {
+  0% {
+    width: 0%; }
+  100% {
+    width: 25%; } }
+@-webkit-keyframes width-small {
+  0% {
+    width: 0%; }
+  100% {
+    width: 25%; } }
 
 /*# sourceMappingURL=mixin.css.map */

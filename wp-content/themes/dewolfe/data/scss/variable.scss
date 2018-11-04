@@ -30,6 +30,7 @@ $padding-mobile: 16px;
 
 //Z-index
 $Z-index1: 100;
+$Z-index5: 500;
 
 //Fonts
 $poppins: 'Poppins', sans-serif;
@@ -37,9 +38,10 @@ $montserrat: 'Montserrat', sans-serif;
 
 //Shadow
 $shadow: #b5b2b2;
-$button-shadow: rgba(35, 35, 35, 0.5);
+$button-shadow: rgba(35, 35, 35, 0.2);
 
 //font-weight
-$weight-1: 100;
-$weight-7: 700;
-$weight-9: 900;
+$light: 300;
+$regular: 400;
+$semiBold: 600;
+$bold: 700;

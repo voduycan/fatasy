@@ -3,10 +3,10 @@ Error: Undefined variable: "$poppins".
         on line 4 of C:\xampp\htdocs\dewolfe\wp-content\themes\dewolfe\data\scss\style.scss
 
 1: html, body {
-2:   margin: 0;
-3:   padding: 0;
-4:   font-family: $poppins !important;
-5: 
+2:     margin: 0;
+3:     padding: 0;
+4:     font-family: $poppins !important;
+5:     overflow-x: hidden;
 6: }
 7: 
 8: * {
@@ -64,4 +64,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$poppins\".\A         on line 4 of C:\xampp\htdocs\dewolfe\wp-content\themes\dewolfe\data\scss\style.scss\A \A 1: html, body {\A 2:   margin: 0;\A 3:   padding: 0;\A 4:   font-family: $poppins !important;\A 5: \A 6: }\A 7: \A 8: * {\A 9:   box-sizing: border-box;"; }
+  content: "Error: Undefined variable: \"$poppins\".\A         on line 4 of C:\xampp\htdocs\dewolfe\wp-content\themes\dewolfe\data\scss\style.scss\A \A 1: html, body {\A 2:     margin: 0;\A 3:     padding: 0;\A 4:     font-family: $poppins !important;\A 5:     overflow-x: hidden;\A 6: }\A 7: \A 8: * {\A 9:   box-sizing: border-box;"; }

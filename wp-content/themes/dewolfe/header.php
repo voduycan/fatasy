@@ -38,9 +38,9 @@
 <div class="container">
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light">
-			<a class="navbar-brand" href="#">
-				<img class="logo-normal" src="<?php bloginfo('template_url'); ?>/data/image/png/logo_white.png">
-				<img class="logo-fixed" src="<?php bloginfo('template_url'); ?>/data/image/png/logo_navy.png">
+			<a class="navbar-brand" href="<?php bloginfo('url'); ?>">
+				<img class="logo-normal" src="<?php the_field('logo_header', 'options'); ?>">
+				<img class="logo-fixed" src="<?php the_field('logo_fixed', 'options'); ?>">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<img src="<?php bloginfo('template_url'); ?>/data/image/svg/menu.svg">
@@ -48,16 +48,27 @@
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ">
-				  <li class="nav-item active">
-				    <a class="nav-link" href="<?php bloginfo('url'); ?>/home">home</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="<?php bloginfo('url'); ?>/product">products</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="<?php bloginfo('url'); ?>/faq">faq / about us</a>
-				  </li>
-				  
+					<?php 
+		                 $menuLocations = get_nav_menu_locations(); 
+		                 $menuID = $menuLocations['main-nav']; 
+		                 $primaryNav = wp_get_nav_menu_items($menuID); 
+		                
+		                
+		                foreach ( $primaryNav as $navItem ) {
+		                    $sss = '';
+		                    if($navItem->object_id == $post->ID){
+		                        $sss .= "active";
+		                    }
+		                    
+		                    foreach ( $navItem->classes as $a ) {
+		                        $sss .= " ".$a;
+		                    }
+		                  echo '<li class="nav-item '.$sss.'"> 
+		                            <a class="nav-link" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a> 
+
+		                        </li>';
+		                }
+	             	?>
 				</ul>
 			</div>
 		</nav>

@@ -74,6 +74,7 @@ $(function() {
                 scrollTop: $(".our-client").offset().top
             }, 800);
         });
+        $('#no-1').addClass('active');
     });
     if($(document).scrollTop() >= $("header").height()){
     	$('header').addClass('to-fixed');

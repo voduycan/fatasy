@@ -16,6 +16,18 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 	return;
 }
+if( function_exists('acf_add_options_page')) {
+	acf_add_options_page(array('page_title'=>'Header & Footer','menu_title'=>'Header & Footer','menu_slug'=>'theme-options','post_id' => 'options','capability'=>'edit_posts','redirect'=>true));
+	acf_add_options_sub_page(array('page_title'=>'Header Area','menu_title'=>'Header Area','parent_slug'=>'theme-options'));
+	acf_add_options_sub_page(array('page_title'=>'Footer Area','menu_title'=>'Footer Area','parent_slug'=>'theme-options'));
+			
+}
+//top menu
+add_theme_support( 'menus' );
+
+register_nav_menus(
+   array(
+       'main-nav' => 'Menu chính' ) );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

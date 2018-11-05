@@ -16,25 +16,35 @@
 <footer>
 	<div class="row">
 		<div class="col-12 col-sm-3 footer-logo">
-			<a href="#"><img src="<?php bloginfo('template_url'); ?>/data/image/png/logo_navy.png"></a>
-			<a class="email" href="mailto:edu@dewolfe.io">edu@dewolfe.io</a>
+			<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
+			<a class="email" href="mailto:edu@dewolfe.io"><?php the_field('email', 'options'); ?></a>
 			
 		</div>
 		<div class="col-12 col-sm-6 menu d-flex">
 			<ul>
-				<li><a href="<?php bloginfo('url'); ?>/home">home</a></li>
-				<li><a href="<?php bloginfo('url'); ?>/product">products</a></li>
-				<li><a href="<?php bloginfo('url'); ?>/faq">faq / about us</a></li>
+				<?php 
+	                 $menuLocations = get_nav_menu_locations(); 
+	                 $menuID = $menuLocations['main-nav']; 
+	                 $primaryNav = wp_get_nav_menu_items($menuID); 
+	                
+	                
+	                foreach ( $primaryNav as $navItem ) {
+	                  echo '<li class="nav-item"> 
+	                            <a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a> 
+
+	                        </li>';
+	                }
+             	?>
 			</ul>
 			
 		</div>
 		<div class="col-12 col-sm-3 social d-flex">
-			<a href="#"><span class="icon-facebook"></span></a>
-			<a href="#"><span class="icon-twitter"></span></a>
-			<a href="#"><span class="icon-instagram"></span></a>
+			<a target="_blank" href="<?php the_field('facebook', 'options'); ?>"><span class="icon-facebook"></span></a>
+			<a target="_blank" href="<?php the_field('twitter', 'options'); ?>"><span class="icon-twitter"></span></a>
+			<a target="_blank" href="<?php the_field('instagram', 'options'); ?>"><span class="icon-instagram"></span></a>
 		</div>
 		<div class="col-12 col-sm-12 copy-right">
-			<p>copyright <span class="icon-copyright"></span> 2018. dewolfe all right reseved</p>
+			<p><?php the_field('copy_right', 'options'); ?><span class="icon-copyright"></span><?php the_field('reseved', 'options'); ?></p>
 		</div>
 
 	</div>

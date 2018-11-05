@@ -13,31 +13,31 @@
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="caption d-none d-md-block">
-        <h1>blockchain winter camp</h1>
-        <p>2 weeks of winter courses and fun, in an amazing country.</p>
-        <button class="btn">take your first step</button>
+        <h1><?php the_field('title_s1', $post->ID); ?></h1>
+        <p><?php the_field('text_s1', $post->ID); ?></p>
+        <button class="btn"><?php the_field('button_s1', $post->ID); ?></button>
     </div>
 
     <div class="overflow full-device-width">
+        <?php if( have_rows('images_s1')): $n = 0; ?>
+            <div class="carousel-inner">
+                <?php while( have_rows('images_s1') ): the_row();
+                    // vars
+                    $image = get_sub_field('image');
+                    $n++;
+                ?>
+                    <div class="carousel-item" id="no-<?php echo($n); ?>" style="background-image: url('<?php echo $image; ?>')">
+                    </div>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
+               
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <?php for ($i=1; $i < $n; $i++): ?> 
+                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
+            <?php endfor; ?>
         </ol>	
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
-            </div>
-            <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
-            </div>
-            <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
-            </div>
-            <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
-            </div>
-            <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/png/panel.png)">
-            </div>
-        </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,185 +47,119 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-    <button id="scroll-down"><span>Scroll down</span></button>
+    <button id="scroll-down"><span><?php the_field('scroll_down_s1', $post->ID); ?></span></button>
 </section>
 <!-- End Top panel -->
 
 <!-- Our client -->
 <section class="our-client">
-    <h2>taught by</h2>
-    <img class="taught" src="<?php bloginfo('template_url'); ?>/data/image/png/by_harvard.png" alt="">
-    <img class="taught" src="<?php bloginfo('template_url'); ?>/data/image/png/by_mit.png" alt="">
-    <h2>our clients</h2>
-    <img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_seeroo.png" alt="">
-    <img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clietns_icce.png" alt="">
-    <img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_mondrian.png" alt="">
-    <img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_kis.png" alt="">
-    <img class="client" src="<?php bloginfo('template_url'); ?>/data/image/png/clients_yonsei.png" alt="">
+    <h2><?php the_field('taught_s2', $post->ID); ?></h2>
+    <?php if( have_rows('taught_logo_s2')): ?>
+        <?php while( have_rows('taught_logo_s2')): the_row();
+            // vars
+            $logo = get_sub_field('logo');
+        ?>
+        <img class="taught" src="<?php echo($logo); ?>" alt="">
+        <?php endwhile; ?>
+    <?php endif; ?>
+
+    <h2><?php the_field('client_s2', $post->ID); ?></h2>
+
+    <?php if( have_rows('client_logo_s2')): ?>
+        <?php while( have_rows('client_logo_s2')): the_row();
+            // vars
+            $logo = get_sub_field('logo');
+        ?>
+        <img class="client" src="<?php echo($logo); ?>" alt="">
+        <?php endwhile; ?>
+    <?php endif; ?>
+
 </section>
 <!-- End Our client -->
+
 <!-- Our Camp -->
 <section class="our-camp">
     <div class="title">
-        <h2>Our camp magic is in the experience</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <h2><?php the_field('title_s3', $post->ID); ?></h2>
+        <p><?php the_field('text_s3', $post->ID); ?></p>
     </div>
-    <div class="card-deck">
-        <div class="card">
-            <div class="card-img-top" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/section3_learn.png');">
-                <div class="background-opacity"></div>
-                <h2>learn</h2>
-            </div>
+    <?php if( have_rows('card_s3')): ?>
+        <div class="card-deck">
+            <?php while( have_rows('card_s3')): the_row();
+                // vars
+                $title = get_sub_field('title');
+                $image = get_sub_field('image');
+                $text = get_sub_field('text');
+            ?>
+        
+                <div class="card">
+                    <div class="card-img-top" style="background-image: url('<?php echo($image); ?>">
+                        <div class="background-opacity"></div>
+                        <h2><?php echo($title); ?></h2>
+                    </div>
 
-            <div class="card-body">
-                <ul>
-                    <li>Block chain</li>
-                    <li>Machine learning data science</li>
-                </ul>
-            </div>
+                    <div class="card-body">
+                        <?php echo($text); ?>
+                    </div>
+                </div>
+            <?php endwhile; ?>
         </div>
-        <div class="card">
-            <div class="card-img-top" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/section3_interact.png');">
-                <div class="background-opacity"></div>
-                <h2>interact</h2>
-            </div>
-            <div class="card-body">
-                <p>Just bring your fun self! Price shown includes everything: room, board, meals, travel, course material!</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-img-top" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/section3_explore.png');">
-                <div class="background-opacity"></div>
-                <h2>explore</h2>
-            </div>
-            <div class="card-body">
-                <p>Experience the best of Vietnam with our trips on the weekend.</p>
-            </div>
-        </div>
-    </div>
+    <?php endif; ?>
 </section>
 <!-- End Our Camp -->
+
 <!-- Testimonials -->
 <section class="testimonials">
-    <!-- <div class="background" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/svg/bg-elip.svg');"></div> -->
-    <img  class="background" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip.png">
-    <h2>testimonials</h2>
-    <div class="autoplay slider">
-        <div>
-            <div class="row d-flex">
-                <div class="col-12 col-sm-5 px-4">
-                    <div class="elip">
-                        <div class="elip-big">
-                            <div class="elip-small">
-                                <img src="<?php bloginfo('template_url'); ?>/data/image/png/testimonial_Kim.png" alt="">
+    <img  class="background" src="<?php the_field('background_s4', $post->ID); ?>">
+    <h2><?php the_field('title_s4', $post->ID); ?></h2>
+
+    <?php if( have_rows('slide_s4')): ?>
+        <div class="autoplay slider">
+            <?php while( have_rows('slide_s4')): the_row();
+                // vars
+                $avarta = get_sub_field('avarta');
+                $about = get_sub_field('about');
+                $name = get_sub_field('name');
+                $company = get_sub_field('company');
+            ?>
+                <div>
+                    <div class="row d-flex">
+                        <div class="col-12 col-sm-5 px-4">
+                            <div class="elip">
+                                <div class="elip-big">
+                                    <div class="elip-small">
+                                        <div class="img-bg" style="background-image: url('<?php echo($avarta); ?>');"></div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-12 offset-sm-1 col-sm-6 cap">
+                            <p><?php echo($about); ?></p>
+                            <h3><?php echo($name); ?></h3>
+                            <span><?php echo($company); ?></span>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-12 offset-sm-1 col-sm-6 cap">
-                    <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
-                    <h3>Kim Sun AH</h3>
-                    <span>titles, company</span>
-
-                </div>
-            </div>
+            <?php endwhile; ?>
         </div>
-        <div>
-            <div class="row d-flex">
-                <div class="col-12 col-sm-5 px-4">
-                    <div class="elip">
-                        <div class="elip-big">
-                            <div class="elip-small">
-                                <img src="<?php bloginfo('template_url'); ?>/data/image/png/testimonial_Kim.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 offset-sm-1 col-sm-6 cap">
-                    <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
-                    <h3>Kim Sun AH</h3>
-                    <span>titles, company</span>
-
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="row d-flex">
-                <div class="col-12 col-sm-5 px-4">
-                    <div class="elip">
-                        <div class="elip-big">
-                            <div class="elip-small">
-                                <img src="<?php bloginfo('template_url'); ?>/data/image/png/testimonial_Kim.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 offset-sm-1 col-sm-6 cap">
-                    <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
-                    <h3>Kim Sun AH</h3>
-                    <span>titles, company</span>
-
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="row d-flex">
-                <div class="col-12 col-sm-5 px-4">
-                    <div class="elip">
-                        <div class="elip-big">
-                            <div class="elip-small">
-                                <img src="<?php bloginfo('template_url'); ?>/data/image/png/testimonial_Kim.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 offset-sm-1 col-sm-6 cap">
-                    <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
-                    <h3>Kim Sun AH</h3>
-                    <span>titles, company</span>
-
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="row d-flex">
-                <div class="col-12 col-sm-5 px-4">
-                    <div class="elip">
-                        <div class="elip-big">
-                            <div class="elip-small">
-                                <img src="<?php bloginfo('template_url'); ?>/data/image/png/testimonial_Kim.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 offset-sm-1 col-sm-6 cap">
-                    <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
-                    <h3>Kim Sun AH</h3>
-                    <span>titles, company</span>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <?php endif; ?>
 </section>
 <!-- End Testimonials -->
+
 <!-- Journey -->
-<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php bloginfo('template_url'); ?>/data/image/png/ready_for_journey.png')">
+<section class="journey" style="background-image: url('<?php the_field('background_small_s5', $post->ID); ?>'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
     <div class="over-lay"></div>
     <div class="row d-flex">
         <div class="col-12 col-sm-6 text">
-            <h2>READY FOR A JOURNEY OF a LIFETIME ?</h2>
-            <ul>
-                <li>Our courses fill up fast-don’t take your chances</li>
-                <li>Next admission deadline is November 30, 2018</li>
-            </ul>
+            <h2><?php the_field('title_s5', $post->ID); ?></h2>
+            <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
-                <button class="btn btn-blue">apply now</button>
-                <button class="btn btn-light">learn about our camp</button>
+                <button class="btn btn-blue"><?php the_field('apply_button_s5', $post->ID); ?></button>
+                <button class="btn btn-light"><?php the_field('learn_button_s5', $post->ID); ?></button>
             </div>
         </div>
-        <div class="col-12 col-sm-6 image" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/ready_for_journey.png');">
+        <div class="col-12 col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
         </div>
     </div>
 </section>

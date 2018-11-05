@@ -40,7 +40,6 @@
 }
 @mixin hover($color){
     position: relative;
-    @include transition(all 0.2s ease-in-out);
     &::after{
         bottom: -5px;
         content: '';                     

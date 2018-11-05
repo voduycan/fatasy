@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     font-family: $poppins !important;
     overflow-x: hidden;
+    background: $bg-body;
 }
 
 * {
@@ -111,7 +112,6 @@ header{
     @media all and (max-width: 576px){
         padding: 0px $padding-mobile;
     }
-
     nav.navbar{
         padding-left: 0;
         padding-right: 0;
@@ -163,7 +163,6 @@ header{
                     color: $color-white;
                     font-size: $size-normal;
                     font-weight: $regular;
-                    @include transition(all 0.2s ease-in-out);
                     @media all and (max-width: 992px){
                         text-align: right;
                     }
@@ -189,6 +188,9 @@ header{
                         outline: 0;
                         color: $color-white;
 
+                    }
+                    &:last-child{
+                        padding-right: 0;
                     }
                 }
                 &.active{
@@ -217,11 +219,17 @@ header{
         background: $bg-white;
         border: 1px solid $border-header;
         margin-top: 0;
-        max-width: 1440px;
+        max-width: 100%;
         margin: 0 auto;
         width: 100%;
+        @media all and (min-width: 1440px){
+            padding: 0 calc(50% - (720px - 100px));
+        }
         nav.navbar{
             .navbar-brand{
+                @media all and (max-width: 576px){
+                    width: 50px;
+                }
                 .logo-fixed{
                     display: block;
                 }
@@ -239,7 +247,7 @@ header{
             .navbar-nav{
                 .nav-item{
                     .nav-link{
-                       font-size: $size-normal - 1;
+                        font-size: $size-normal - 1;
                         color: $color-black-light;
                         position: relative;
                         @include hover($color-blue);
@@ -408,6 +416,7 @@ footer{
 .carousel-control-prev{
     left: 20px;
     top: 60%;
+    z-index: $Z-index1;
     @include fit-content-height;
     @include fit-content-width;
     @media all and (max-width: 576px){
@@ -417,6 +426,7 @@ footer{
 .carousel-control-next{
     top: 60%;
     right: 20px;
+    z-index: $Z-index1;
     @include fit-content-height;
     @include fit-content-width;
     @media all and (max-width: 576px){
@@ -866,7 +876,16 @@ footer{
     position: relative;
     z-index: $Z-index1;
     overflow: hidden;
-    
+    .over-lay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        @include opacity(0.3);
+        background: $bg-black;
+        z-index: -1;
+    }
     .row{
         align-items: center;
         background: $bg-white;

@@ -122,8 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-1"></div>
-                <div class="col-12 col-sm-6 cap">
+                <div class="col-12 offset-sm-1 col-sm-6 cap">
                     <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
                     <h3>Kim Sun AH</h3>
                     <span>titles, company</span>
@@ -142,8 +141,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-1"></div>
-                <div class="col-12 col-sm-6 cap">
+                <div class="col-12 offset-sm-1 col-sm-6 cap">
                     <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
                     <h3>Kim Sun AH</h3>
                     <span>titles, company</span>
@@ -162,8 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-1"></div>
-                <div class="col-12 col-sm-6 cap">
+                <div class="col-12 offset-sm-1 col-sm-6 cap">
                     <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
                     <h3>Kim Sun AH</h3>
                     <span>titles, company</span>
@@ -182,8 +179,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-1"></div>
-                <div class="col-12 col-sm-6 cap">
+                <div class="col-12 offset-sm-1 col-sm-6 cap">
                     <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
                     <h3>Kim Sun AH</h3>
                     <span>titles, company</span>
@@ -202,28 +198,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-1"></div>
-                <div class="col-12 col-sm-6 cap">
-                    <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
-                    <h3>Kim Sun AH</h3>
-                    <span>titles, company</span>
-
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="row d-flex">
-                <div class="col-12 col-sm-5 px-4">
-                    <div class="elip">
-                        <div class="elip-big">
-                            <div class="elip-small">
-                                <img src="<?php bloginfo('template_url'); ?>/data/image/png/testimonial_Kim.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-7 cap">
+                <div class="col-12 offset-sm-1 col-sm-6 cap">
                     <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500"</p>
                     <h3>Kim Sun AH</h3>
                     <span>titles, company</span>
@@ -236,7 +211,8 @@
 </section>
 <!-- End Testimonials -->
 <!-- Journey -->
-<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('http://localhost/dewolfe/wp-content/themes/dewolfe/data/image/png/ready_for_journey.png')">
+<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php bloginfo('template_url'); ?>/data/image/png/ready_for_journey.png')">
+    <div class="over-lay"></div>
     <div class="row d-flex">
         <div class="col-12 col-sm-6 text">
             <h2>READY FOR A JOURNEY OF a LIFETIME ?</h2>

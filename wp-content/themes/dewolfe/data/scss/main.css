@@ -1058,7 +1058,8 @@ footer {
     border-radius: 5px;
     z-index: 100;
     height: 450px;
-    margin: 0; }
+    margin: 0;
+    box-shadow: 0px 0px 15px 10px rgba(35, 35, 35, 0.2); }
     .journey .row .text {
       padding: 3rem; }
       .journey .row .text h2 {
@@ -1106,8 +1107,7 @@ footer {
       background-position: center center;
       background-position: 20% center;
       border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      box-shadow: 15px 15px 10px 0px rgba(35, 35, 35, 0.2); }
+      border-bottom-right-radius: 5px; }
       @media all and (max-width: 576px) {
         .journey .row .image {
           border-top-left-radius: 5px;

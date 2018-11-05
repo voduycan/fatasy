@@ -110,7 +110,7 @@
 
 <!-- Testimonials -->
 <section class="testimonials">
-    <img  class="background" src="<?php the_field('background_s4', $post->ID); ?>">
+    <img  class="background" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip.png">
     <h2><?php the_field('title_s4', $post->ID); ?></h2>
 
     <?php if( have_rows('slide_s4')): ?>
@@ -148,7 +148,7 @@
 <!-- End Testimonials -->
 
 <!-- Journey -->
-<section class="journey" style="background-image: url('<?php the_field('background_small_s5', $post->ID); ?>'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
+<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
     <div class="over-lay"></div>
     <div class="row d-flex">
         <div class="col-12 col-sm-6 text">

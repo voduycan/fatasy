@@ -894,6 +894,7 @@ footer{
          z-index:  $Z-index1;
          height: 450px;
          margin: 0;
+         box-shadow: 0px 0px 15px 10px $button-shadow;
 
         .text{
             padding: 3rem;
@@ -949,7 +950,7 @@ footer{
             background-position: 20% center;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
-            box-shadow: 15px 15px 10px 0px $button-shadow;
+            
             @media all and (max-width: 576px){
                 border-top-left-radius: 5px;
                 border-bottom-right-radius: 0;

@@ -29,6 +29,22 @@ register_nav_menus(
    array(
        'main-nav' => 'Menu chính' ) );
 
+function my_acf_admin_head() {
+    ?>
+    <style type="text/css">
+
+    	/* css hide form */
+    	#group_s1{
+    		padding: 0;
+    	}
+    	#group_s1 .acf-fields{
+    		border: none;
+    	}
+    </style>
+    <?php
+}
+add_action('acf/input/admin_head', 'my_acf_admin_head');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *

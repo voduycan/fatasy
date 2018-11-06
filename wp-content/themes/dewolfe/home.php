@@ -12,11 +12,17 @@
 
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="caption d-none d-md-block">
-        <h1><?php the_field('title_s1', $post->ID); ?></h1>
-        <p><?php the_field('text_s1', $post->ID); ?></p>
-        <button class="btn"><?php the_field('button_s1', $post->ID); ?></button>
-    </div>
+    <?php $group = get_field('group_s1'); 
+        if($group):
+    ?>
+
+        <div class="caption">
+            <h1><?php echo $group['title']; ?></h1>
+            <?php the_field('text_s1', $post->ID); ?>
+            <button class="btn btn-blue"><?php echo $group['button']; ?></button>
+        </div>
+        <button id="scroll-down"><span><?php echo $group['scroll_down']; ?></span></button>
+    <?php endif; ?>
 
     <div class="overflow full-device-width">
         <?php if( have_rows('images_s1')): $n = 0; ?>
@@ -33,21 +39,25 @@
         <?php endif; ?>
                
         <ol class="carousel-indicators">
-             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <?php for ($i=1; $i < $n; $i++): ?> 
-                <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
-            <?php endfor; ?>
+            <?php if($n > 1): ?>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <?php for ($i=1; $i < $n; $i++): ?> 
+                        <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
+                    <?php endfor; ?>
+            <?php endif; ?>
         </ol>	
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-    <button id="scroll-down"><span><?php the_field('scroll_down_s1', $post->ID); ?></span></button>
+    <?php if($n > 1): ?>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    <?php endif; ?>
+    
 </section>
 <!-- End Top panel -->
 

@@ -48,11 +48,11 @@
         left: 50%;
         border-bottom: 1px solid $color;
         @include translate(-50%,0);
-        @include transition(all 0.2s ease-in-out);
+        @include transition(width 0.2s ease-in-out);
     }
     &:hover{
         &::after{
-            width: 40%;
+            width: 20px;
         }
     }
 }

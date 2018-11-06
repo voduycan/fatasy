@@ -42,6 +42,32 @@ section{
         padding: 50px $padding-mobile;
     }
 }
+.btn{
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-size: $size-normal - 2;
+    font-weight: $bold;
+    border-radius: 7px;
+    &:hover{
+         box-shadow: 0px 15px 10px 0px $button-shadow;
+    }
+}
+.btn-blue{
+    background: $bg-blue;
+    color: $color-white;
+    &:hover{
+        background: $bg-blue;
+    }
+}
+.btn-light{
+    background: $bg-white;
+    border: 1px solid $color-black;
+    color: $color-black-light;
+    &:hover{
+        background: $bg-white;
+        border: 1px solid $color-black;
+    }
+}
 #scroll-down{
     position: absolute;
     bottom: 0;
@@ -51,8 +77,8 @@ section{
     font-size: $size-normal - 2;
     color: $color-gray;
     font-weight: $light;
+    z-index: $Z-index1;
     span{
-        position: relative;
        @include hover($color-gray);
     }
     @media all and (max-width: 576px){
@@ -76,9 +102,7 @@ a:hover{
 .ha-header-show {
     @include animation(to-down 0.2s ease-in-out);
 }
-button:hover{
-     box-shadow: 0px 15px 10px 0px $button-shadow;
-}
+
 .slick-prev, .slick-next{
     &:hover{
         box-shadow: none;
@@ -163,6 +187,8 @@ header{
                     color: $color-white;
                     font-size: $size-normal;
                     font-weight: $regular;
+                    padding-left: 0;
+                    padding-right: 0;
                     @media all and (max-width: 992px){
                         text-align: right;
                     }
@@ -189,15 +215,13 @@ header{
                         color: $color-white;
 
                     }
-                    &:last-child{
-                        padding-right: 0;
-                    }
+                    
                 }
                 &.active{
                     .nav-link{
                         color: $color-white;
                         &::after{
-                            width: 40%;
+                            width: 20px;
                             @media all and (max-width: 992px){
                                 display: none;
                             }
@@ -272,7 +296,7 @@ header{
                         .nav-link{
                             color: $color-blue;
                             &::after{
-                                width: 40%;
+                                width: 20px;
                                 @media all and (max-width: 992px){
                                     display: none;
                                 }
@@ -415,23 +439,19 @@ footer{
 }
 .carousel-control-prev{
     left: 20px;
-    top: 60%;
+    top: 50%;
     z-index: $Z-index1;
     @include fit-content-height;
     @include fit-content-width;
-    @media all and (max-width: 576px){
-        top: 55%;
-    }
+    
 }
 .carousel-control-next{
-    top: 60%;
+    top: 50%;
     right: 20px;
     z-index: $Z-index1;
     @include fit-content-height;
     @include fit-content-width;
-    @media all and (max-width: 576px){
-        top: 55%;
-    }
+    
     
 }
 .carousel-control-prev-icon{
@@ -443,22 +463,23 @@ footer{
 .slick-initialized.slider-nav{
     width: 80%;
 }
+
 #carouselExampleIndicators{
-    padding: 0;
+    padding: 0; 
     .caption{
         text-align: left;
         position: absolute;
         z-index: $Z-index1;
         color: $color-white;
-        top: 60%;
+        top: 50%;
         left: $padding;
+        @include translateY(-50%);
         @media all and (max-width: 992px){
             left: $padding-tablet;
         }
         @media all and (max-width: 576px){
             left: $padding-mobile;
         }
-        @include translateY(-50%);
         &.d-none{
             display: block !important;
         }
@@ -473,13 +494,8 @@ footer{
             margin-bottom: 20px;
             font-weight: $light;
         }
-        button{
-            text-transform: uppercase;
-            font-size: $size-normal - 2;
-            background: $bg-blue;
-            border-radius: 7px;
+        .btn-blue{
             padding: 0.75rem 2rem;
-            font-weight: $bold;
         }
         h1{
             font-size: $size-h2 + 8;
@@ -491,7 +507,6 @@ footer{
         }
         @media all and (max-width: 576px){
             text-align: center;
-            top: 55%;
             left: 0;
             width: 100%;
             h1{
@@ -922,26 +937,14 @@ footer{
                     }
                 }
             }
-            .btn{
-                text-transform: uppercase;
-                margin-top: 10px;
-                font-size: $size-normal - 2;
-                font-weight: $bold;
-                border-radius: 7px;
-            }
+            
             .btn-blue{
-                background: $bg-blue;
                 margin-right: 20px;
-                color: $color-white;
-                @media all and (max-width: 576px){
+                 @media all and (max-width: 576px){
                     padding: .375rem 3.45rem;
                 }
             }
-            .btn-light{
-                background: $bg-white;
-                border: 1px solid $color-black;
-                color: $color-black-light;
-            }
+            
             
         }
         .image{
@@ -993,7 +996,51 @@ footer{
         
     }
 }
+#carouselExampleIndicators.product-panel{
+    .caption{
+        padding: 50px;
+        top: 50%;
+        background: $bg-black-opacity;
+        left: $padding;
+        right: $padding;
+        @include fit-content-width;
+        @media all and (max-width: 992px){
+            padding: 25px;
+            right: $padding-tablet;
+            left: $padding-tablet;
+            width: auto;
+        }
+        @media all and (max-width: 576px){
+            background: none;
+            padding: 0;
+            top: 50%;
+            right: $padding-mobile;
+            left: $padding-mobile;
+        }
 
+        .btn-light{
+            padding: 0.75rem 2rem;
+            border: none;
+            margin-right: 20px;
+            @media all and (max-width: 576px){
+                margin-right: 0;
+            }
+        }
+        ul{
+            font-weight: $regular;
+            width: 50%;
+            @media all and (max-width: 576px){
+                width: 80%;
+                margin: 0 auto;
+                text-align: left;
+            }
+            li{
+                line-height: 2;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
 .curriculum{
     background: $bg-white;
     .foundation{

@@ -51,7 +51,7 @@
 </footer>
 </div>
 <!-- Boostrap -->
-<script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/jquery-2.2.0.min.js" type="text/javascript"></script>
+
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/popper.min.js"></script>	
 
 <!-- Slick -->

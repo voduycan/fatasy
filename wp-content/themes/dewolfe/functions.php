@@ -22,6 +22,15 @@ if( function_exists('acf_add_options_page')) {
 	acf_add_options_sub_page(array('page_title'=>'Footer Area','menu_title'=>'Footer Area','parent_slug'=>'theme-options'));
 			
 }
+add_action( 'wp_ajax_playvideo', 'playvideo' );
+add_action( 'wp_ajax_nopriv_playvideo', 'playvideo' );
+function playvideo(){
+	// $no = $_POST['number'];
+	$id = $_POST['id'];
+	$result = get_field('video_s3', $id);
+	die (json_encode($result));
+}
+
 //top menu
 add_theme_support( 'menus' );
 

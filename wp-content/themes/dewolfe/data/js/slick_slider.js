@@ -75,6 +75,9 @@ $(function() {
             }, 800);
         });
         $('#no-1').addClass('active');
+        $('.foundation .slick-prev').append('<span class="icon-left-arrow"></span>');
+        $('.foundation .slick-next').append('<span class="icon-right-arrow"></span>');
+        
     });
     if($(document).scrollTop() >= $("header").height()){
     	$('header').addClass('to-fixed');

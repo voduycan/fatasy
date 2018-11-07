@@ -63,12 +63,13 @@
 <!-- Slide -->
 <section class="curriculum text-center">
   <h2>A curriculum specifically focused on real-life application.</h2>
-  <p>We blend intense yet immersive learning with real-life experience. That is the only way you can have both the knowledge and skill set to excel as a professional.</p>
-  <h3>Foundation Theory</h3>
+  <p class="text">We blend intense yet immersive learning with real-life experience. That is the only way you can have both the knowledge and skill set to excel as a professional.</p>
   <div class="foundation slider">
     <div>
       <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x300?text=1" alt="Card image cap">
+        <div class="card-img-top">
+          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_blockchain.png" alt="Card image cap">
+        </div>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -77,7 +78,9 @@
     </div>
     <div>
       <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x300?text=1" alt="Card image cap">
+        <div class="card-img-top">
+          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_ethereum.png" alt="Card image cap">
+        </div>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -86,7 +89,9 @@
     </div>
     <div>
       <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x300?text=1" alt="Card image cap">
+        <div class="card-img-top">
+          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_develop.png" alt="Card image cap">
+        </div>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -95,7 +100,9 @@
     </div>
     <div>
       <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x300?text=1" alt="Card image cap">
+        <div class="card-img-top">
+          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_advanced.png" alt="Card image cap">
+        </div>
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -104,16 +111,9 @@
     </div>
     <div>
       <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x300?text=1" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card-img-top">
+          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_ethereum.png" alt="Card image cap">
         </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <img class="card-img-top" src="http://placehold.it/350x300?text=1" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -121,22 +121,59 @@
       </div>
     </div>
   </div>
-  <button class="btn">request detailed curriculum</button>
+  <button class="btn btn-blue">request detailed curriculum</button>
 </section>
 <!-- End Slide -->
 <!-- Blockchain -->
-<section class="blockchain text-centerx">
-  <h2>Lorem Ipsum is simply dummy text of the printing and typesetting</h2>
-  <div class="row">
-    <div class="col-12 col-sm-6">
-      <iframe width="420" height="315" 
-      src="https://www.youtube.com/embed/tgbNymZ7vqY">
-      </iframe>
+<section class="blockchain text-center">
+ <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-blue.png">
+  <h2><?php the_field('title_s3', $post->ID) ?></h2>
+  <div class="row d-flex">
+    <div class="col-12 col-sm-5 col-md-5">
+      <div class="video">
+        <div class="background" style="background-image: url('<?php the_field('image_s3', $post->ID) ?>');">
+          <div class="play-button d-flex">
+            <img src="<?php bloginfo('template_url'); ?>/data/image/png/play-button.png">
+          </div>
+        </div>
+        <div class="play-video d-none"></div>
+      </div>
     </div>
-    <div class="col-12 col-sm-6 text-left">
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    <div class="col-12 offset-sm-0 offset-md-1 col-sm-7 col-md-6 text-left">
+      <p><?php the_field('text_s3', $post->ID) ?></p>
     </div>
   </div>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var loading = '<img id="loading-img" width="30" height="30" alt="loading" src="<?php bloginfo('template_url'); ?>/data/image/svg/loading.svg"/>';
+      $('.play-button').click(function(){
+
+          $.ajax({
+                type : 'post',
+                url : '<?php echo admin_url('admin-ajax.php'); ?>',
+                dataType : 'json',
+                data : {
+                    action : 'playvideo',
+                    id : <?php echo $post->ID; ?>,
+                },
+                beforeSend : function(){
+                    $('.play-button').css('background','none');
+                    $('.play-button').html(loading);
+                }, 
+                success : function(result){
+                  $('.background').addClass('d-none');
+                  var vt = result.indexOf('?');
+                  var src = result.slice(0,vt+1) + 'autoplay=1&muted=1' + result.slice(vt+1);
+                    $('.play-video').append(src);
+                    $('.play-video').removeClass('d-none');
+                },
+                 error: function(jqXHR,textStatus,errorThrown){
+                    console.log('The following error occured: ' + textStatus, errorThrown);
+                },
+           });
+        });
+    });
+  </script>
 </section>
 <!-- End Blockchain -->
 <!-- our staff -->
@@ -146,7 +183,9 @@
     <div>
       <div class="card">
         <div class="top">
-          <img src="http://placehold.it/350x300?text=1" alt="">
+          <div class="border">
+            <img src="http://placehold.it/350x300?text=1" alt="">
+          </div>
           <div class="info">
             <h3>Name name</h3>
             <span>Co-founder/ CEO of dewolfe, harvard</span>
@@ -160,7 +199,9 @@
     <div>
       <div class="card">
         <div class="top">
-          <img src="http://placehold.it/350x300?text=1" alt="">
+          <div class="border">
+            <img src="http://placehold.it/350x300?text=1" alt="">
+          </div>
           <div class="info">
             <h3>Name name</h3>
             <span>Co-founder/ CEO of dewolfe, harvard</span>
@@ -174,7 +215,9 @@
     <div>
       <div class="card">
         <div class="top">
-          <img src="http://placehold.it/350x300?text=1" alt="">
+          <div class="border">
+            <img src="http://placehold.it/350x300?text=1" alt="">
+          </div>
           <div class="info">
             <h3>Name name</h3>
             <span>Co-founder/ CEO of dewolfe, harvard</span>
@@ -188,7 +231,9 @@
     <div>
      <div class="card">
         <div class="top">
-          <img src="http://placehold.it/350x300?text=1" alt="">
+          <div class="border">
+            <img src="http://placehold.it/350x300?text=1" alt="">
+          </div>
           <div class="info">
             <h3>Name name</h3>
             <span>Co-founder/ CEO of dewolfe, harvard</span>
@@ -248,22 +293,20 @@
 </section>
 <!-- End our staff -->
 <!-- Journey -->
-<section class="journey">
-  <div class="row d-flex">
-    <div class="col-12 col-sm-6 text">
-      <h2>Lorem Ipsum is simply dummy.</h2>
-      <ul>
-        <li>Lorem Ipsum is not simply random text</li>
-        <li>Lorem Ipsum is not simply random text</li>
-      </ul>
-      <div class="button">
-        <button class="btn">apply now</button>
-        <button class="btn">learn about our camp</button>
-      </div>
+<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
+    <div class="over-lay"></div>
+    <div class="row d-flex">
+        <div class="col-12 col-sm-6 text">
+            <h2><?php the_field('title_s5', $post->ID); ?></h2>
+            <?php the_field('text_s5', $post->ID); ?>
+            <div class="button">
+                <button class="btn btn-blue"><?php the_field('apply_button_s5', $post->ID); ?></button>
+                <button class="btn btn-light"><?php the_field('learn_button_s5', $post->ID); ?></button>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
+        </div>
     </div>
-    <div class="col-12 col-sm-6 image">
-      <img src="<?php bloginfo('template_url'); ?>/data/image/slide1.jpg">
-    </div>
-  </div>  
 </section>
+<!-- End Journey -->
 <?php  get_footer(); ?>

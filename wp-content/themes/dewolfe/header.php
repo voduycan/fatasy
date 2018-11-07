@@ -23,6 +23,7 @@
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/data/bootstrap/css/bootstrap.min.css">
+<script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Slick -->

@@ -38,6 +38,11 @@
   -webkit-animation: $animation;
           animation: $animation;
 }
+@mixin rotateY($r){
+     -ms-transform: rotateY($r); /* IE 9 */
+    -webkit-transform: rotateY($r); /* Safari */
+    transform: rotateY($r); 
+}
 @mixin hover($color){
     position: relative;
     &::after{

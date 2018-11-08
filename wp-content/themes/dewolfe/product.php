@@ -62,66 +62,36 @@
 
 <!-- Slide -->
 <section class="curriculum text-center">
-  <h2>A curriculum specifically focused on real-life application.</h2>
-  <p class="text">We blend intense yet immersive learning with real-life experience. That is the only way you can have both the knowledge and skill set to excel as a professional.</p>
+  <h2><?php the_field('title_s2', $post->ID); ?></h2>
+  <p class="text"><?php the_field('text_s2', $post->ID); ?></p>
+
+  <?php if( have_rows('card_s2') ): ?>
   <div class="foundation slider">
+    <?php while( have_rows('card_s2') ): the_row(); 
+
+    // vars
+    $title = get_sub_field('title');
+    $text = get_sub_field('text');
+    $image = get_sub_field('image');
+
+    ?>
     <div>
       <div class="card">
         <div class="card-img-top">
-          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_blockchain.png" alt="Card image cap">
+          <img src="<?php echo $image; ?>" alt="Card image cap">
         </div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title"><?php echo $title; ?></h5>
+          <p class="card-text"><?php echo $text; ?></p>
         </div>
       </div>
     </div>
-    <div>
-      <div class="card">
-        <div class="card-img-top">
-          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_ethereum.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="card-img-top">
-          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_develop.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="card-img-top">
-          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_advanced.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="card-img-top">
-          <img src="<?php bloginfo('template_url'); ?>/data/image/png/section 2_ethereum.png" alt="Card image cap">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
+
+    <?php endwhile; ?>
   </div>
-  <button class="btn btn-blue">request detailed curriculum</button>
+  <?php endif; ?>
+    
+  <button class="btn btn-blue"><?php the_field('button_s2', $post->ID); ?></button>
 </section>
 <!-- End Slide -->
 <!-- Blockchain -->
@@ -178,118 +148,75 @@
 <!-- End Blockchain -->
 <!-- our staff -->
 <section class="our-staff">
-  <h2>our staffs</h2>
+  <h2><?php the_field('title_s4', $post->ID) ?></h2>
+  <img class="background-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip_2.png">
+
+  <?php if( have_rows('card_s4') ): ?>
+
   <div class="staff slider">
+
+  <?php while( have_rows('card_s4') ): the_row(); 
+    // vars
+    $avarta = get_sub_field('avarta');
+    $name = get_sub_field('name');
+    $work = get_sub_field('work');
+    $about = get_sub_field('about');
+    ?>
     <div>
       <div class="card">
         <div class="top">
-          <div class="border">
-            <img src="http://placehold.it/350x300?text=1" alt="">
+          <div class="border-big">
+            <img src="<?php echo $avarta; ?>" alt="">
           </div>
-          <div class="info">
-            <h3>Name name</h3>
-            <span>Co-founder/ CEO of dewolfe, harvard</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="top">
-          <div class="border">
-            <img src="http://placehold.it/350x300?text=1" alt="">
-          </div>
-          <div class="info">
-            <h3>Name name</h3>
-            <span>Co-founder/ CEO of dewolfe, harvard</span>
+          <div class="info d-flex">
+            <h3><?php echo $name; ?></h3>
+            <span><?php echo $work; ?></span>
           </div>
         </div>
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text"><?php echo $about; ?></p>
         </div>
       </div>
     </div>
-    <div>
-      <div class="card">
-        <div class="top">
-          <div class="border">
-            <img src="http://placehold.it/350x300?text=1" alt="">
-          </div>
-          <div class="info">
-            <h3>Name name</h3>
-            <span>Co-founder/ CEO of dewolfe, harvard</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-     <div class="card">
-        <div class="top">
-          <div class="border">
-            <img src="http://placehold.it/350x300?text=1" alt="">
-          </div>
-          <div class="info">
-            <h3>Name name</h3>
-            <span>Co-founder/ CEO of dewolfe, harvard</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="top">
-          <img src="http://placehold.it/350x300?text=1" alt="">
-          <div class="info">
-            <h3>Name name</h3>
-            <span>Co-founder/ CEO of dewolfe, harvard</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="card">
-        <div class="top">
-          <img src="http://placehold.it/350x300?text=1" alt="">
-          <div class="info">
-            <h3>Name name</h3>
-            <span>Co-founder/ CEO of dewolfe, harvard</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
+  <?php endwhile; ?>
   </div>
+  <?php endif; ?>
+    
 </section>
 <section class="trips">
-  <h2>trips in vietnam</h2>
-  <div class="slider slider-for">
-    <div class="image-for" style="background-image: url('http://placehold.it/350x300?text=1');"></div>
-    <div class="image-for" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-    <div class="image-for" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-    <div class="image-for" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-    <div class="image-for" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-  </div>
-  <div class="slider slider-nav">
-    <div class="image-nav" style="background-image: url('http://placehold.it/350x300?text=1');"></div>
-    <div class="image-nav" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-    <div class="image-nav" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-    <div class="image-nav" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-    <div class="image-nav" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/slide1.jpg');"></div>
-  </div>
+  <h2><?php the_field('title_s6', $post->ID) ?></h2>
+  <?php if( have_rows('slide_image_s6') ): $i = 0; ?>
+    <div class="slider slider-for">
+      <?php while( have_rows('slide_image_s6') ): the_row(); 
+
+        // vars
+        $image = get_sub_field('image');
+        $text = get_sub_field('text');
+        $i++;
+
+        ?>
+        <div class="image-for" style="background-image: url('<?php echo $image; ?>');">
+           <p class="text"><?php echo $text; ?></p>
+        </div>
+      <?php endwhile; ?>
+    </div>
+  <?php endif; ?>
+
+<?php if( $i > 1 ): ?>
+  <?php if( have_rows('slide_image_s6') ): ?>
+    <div class="slider slider-nav">
+      <?php while( have_rows('slide_image_s6') ): the_row(); 
+          // vars
+          $image = get_sub_field('image');
+      ?>
+
+        <div class="image-nav" style="background-image: url('<?php echo $image; ?>">
+          <div class="over-lay"></div>
+        </div>
+      <?php endwhile; ?>
+    </div>
+  <?php endif; ?>
+<?php endif; ?>
 </section>
 <!-- End our staff -->
 <!-- Journey -->

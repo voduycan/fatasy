@@ -823,12 +823,12 @@ footer{
                     left: 0;
                     right: 0;
                     bottom: 0;
-                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    border: 1px solid $border-opacity;
                     padding: 40px;
                     border-radius: 50%;
                     .elip-small{
                         height: 100%;
-                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        border: 1px solid $border-opacity;
                         padding: 27px;
                         border-radius: 50%;
                         .img-bg{
@@ -1222,9 +1222,20 @@ footer{
 }
 .our-staff{
     background: $bg-blue;
+    color: $color-white;
+    position: relative;
     h2{
         text-align: center;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
+    }
+    .background-img{
+        @include rotateY(180deg);
+        position: absolute;
+        opacity: 0.5;
+        bottom: -10%;
+        right: 0;
+        width: 60%;
+        height: auto;
     }
     .staff{
         .card{
@@ -1232,8 +1243,9 @@ footer{
             border: none;
             .top{
                 position: relative;
-                padding-left: 130px;
-                .border{
+                padding-left: 150px;
+                height: 115px;
+                .border-big{
                     position: absolute;
                     width: 115px;
                     height: 115px;
@@ -1241,6 +1253,7 @@ footer{
                     left: 0;
                     top: 0;
                     padding: 11px;
+                    border: 1px solid $border-opacity;
                     img{
                         width: 100%;
                         height: 100%;
@@ -1249,13 +1262,28 @@ footer{
                 }
                 .info{
                     padding-right: 16px;
+                    min-height: 115px;
+                    justify-content: center;
+                    flex-direction: column;
                     h3{
                         text-transform: capitalize;
+                        font-size: $size-h3 - 2;
+                        font-weight: $bold;
+                    }
+                    span{
+                        font-size: $size-normal - 4;
+                        font-weight: $light;
+                        font-style: italic;
                     }
                 }
             }
             .card-body{
                 padding: 16px;
+            }
+            @media all and (max-width: 992px){
+                .top{
+                    padding-left: 130px;
+                }
             }
         }
         
@@ -1263,50 +1291,128 @@ footer{
 }
 .trips{
     position: relative;
+    background: $bg-white;
     h2{
         text-align: center;
+        margin-bottom: 4rem;
+        @media all and (max-width: 576px){
+            margin-bottom: 2rem;
+        }
     }
     .slider {
         width: 100%;
         margin: 20px auto;
-    }
+        .slick-prev, .slick-next{
+            background: none;
+            padding: 0;
+            margin-top: -5px;
+            span{
+                font-size: 25px;
+                color: $color-arrow;
 
+            }
+            &:hover{
+                span{
+                    color: $color-blue;
+                }
+            }
+            @media all and (max-width: 576px){
+                padding-top: 5px;
+                margin-top: 0;
+                span{
+                    font-size: 20px;
+                }
+            }
+        }
+
+    }
+    .slider-nav{
+        .slick-list{
+            margin: 0 20px;
+            @media all and (max-width: 576px){
+                margin: 0 10px;
+                padding: 0 25px !important;
+            }
+        }
+    }
     .slick-slide {
-      margin: 0px 20px;
-    }
-
-    .slick-slide img {
-      width: 100%;
+      margin: 0 20px;
+      opacity: 1;
+      @media all and (max-width: 992px){
+        margin: 0 10px;
+      }
+      &.slick-active{
+        opacity: 1;
+      }
+      &.slick-cloned{
+        opacity: 1;
+      }
+      &.slick-current{
+        .image-nav{
+            .over-lay{
+                display: none;
+            }
+        }
+      }
+      
+      .image-nav{
+        position: relative;
+        .over-lay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $bg-black-opacity;
+          }
+      }
     }
 
     .slick-prev:before,
     .slick-next:before {
       color: black;
     }
-
-
-    .slick-slide {
-      @include transition(all 0.3s ease-in-out);
-      opacity: 0.2;
-    }
-
-    .slick-active {
-      opacity: 0.5;
-    }
-
-    .slick-current {
-      opacity: 1;
-    }
     .slick-dots{
         display: none !important;
     }
     .image-for{
         @include background-image;
-            height: 60vmin;
+            height: 760px;
+            position: relative;
+            @media all and (max-width: 992px){
+                height: 500px;
+            }
+            @media all and (max-width: 768px){
+                height: 400px;
+            }
+            @media all and (max-width: 576px){
+                height: 300px;
+            }
+            .text{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                padding: 10px 50px;
+                background: $bg-black-opacity;
+                color: white;
+                margin: 0;
+                @media all and (max-width: 768px){
+                    padding: 10px;
+                    width: 100%;
+                    font-size: 12px;
+                }
+            }
     }
     .image-nav{
         @include background-image;
-        height: 15vmin;
+        height: 100px;
+        @media all and (max-width: 992px){
+            height: 70px;
+        }
+        @media all and (max-width: 576px){
+            height: 50px;
+        }
     }
     .slider-for{
         .slick-slide {

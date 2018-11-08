@@ -3,16 +3,16 @@ $(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 222000,
+		autoplaySpeed: 2000,
 	});
 	$('.foundation').slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 222000,
+		autoplaySpeed: 2000,
    		responsive: [
 	        {
-	        	breakpoint: 991,
+	        	breakpoint: 992,
 	            settings: {
 	                slidesToShow: 3,
 	            }
@@ -35,7 +35,7 @@ $(function() {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 222000,
+		autoplaySpeed: 2000,
    		responsive: [
 	        {
 	        	breakpoint: 768,
@@ -77,7 +77,8 @@ $(function() {
         $('#no-1').addClass('active');
         $('.foundation .slick-prev').append('<span class="icon-left-arrow"></span>');
         $('.foundation .slick-next').append('<span class="icon-right-arrow"></span>');
-        
+     	$('.trips .slick-prev').append('<span class="icon-left-arrow"></span>');
+        $('.trips .slick-next').append('<span class="icon-right-arrow"></span>');
     });
     if($(document).scrollTop() >= $("header").height()){
     	$('header').addClass('to-fixed');

@@ -10,64 +10,56 @@
 ?>
 <?php  get_header(); ?>
 <!-- Top Panel - Blockchain winter camp -->
-<section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
-      <img class="d-block w-100" src="" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>What is Lorem Ipsum?</h5>
-	    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
+<section id="carouselExampleIndicators" class="carousel slide product-panel" data-ride="carousel">
+  <div class="overflow full-device-width">
+        <?php if( have_rows('images_s1')): $n = 0; ?>
+            <div class="carousel-inner">
+                <?php while( have_rows('images_s1') ): the_row();
+                    // vars
+                    $image = get_sub_field('image');
+                    $n++;
+                ?>
+                    <div class="carousel-item" id="no-<?php echo($n); ?>" style="background-image: url('<?php echo $image; ?>')">
+                    </div>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
+               
+        
     </div>
-    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
-      <img class="d-block w-100" src="" alt="Second slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>What is Lorem Ipsum?</h5>
-	    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
-    </div>
-    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
-      <img class="d-block w-100" src="" alt="Third slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>What is Lorem Ipsum?</h5>
-	    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
-    </div>
-    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
-      <img class="d-block w-100" src="" alt="Four slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>What is Lorem Ipsum?</h5>
-	    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
-    </div>
-    <div class="carousel-item" style="background-image: url(<?php bloginfo('template_url'); ?>/data/image/slide1.jpg)">
-      <img class="d-block w-100" src="" alt="Five slide">
-      <div class="carousel-caption d-none d-md-block">
-	    <h5>What is Lorem Ipsum?</h5>
-	    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	    <button class="btn">take your first step</button>
-	  </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <?php $group = get_field('group_s1'); 
+        if($group):
+    ?>
+
+        <div class="caption">
+            <div class="cap">
+                <h1><?php echo $group['title']; ?></h1>
+                <?php the_field('text_s1', $post->ID); ?>
+                <button class="btn btn-blue"><?php echo $group['button_1']; ?></button>
+            </div>
+            <ol class="carousel-indicators">
+            <?php if($n > 1): ?>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <?php for ($i=1; $i < $n; $i++): ?> 
+                        <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
+                    <?php endfor; ?>
+            <?php endif; ?>
+        </ol> 
+        </div>
+    <?php endif; ?>
+
+    
+    <?php if($n > 1): ?>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    <?php endif; ?>
+    
 </section>
 <!-- End Top panel -->
 <!-- FAQ -->
@@ -80,6 +72,7 @@
 		<div class="group">
 			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g1" aria-expanded="false" aria-controls="collapseExample">
 				Button with data-target
+                <span class="icon-bottom"></span>
 			</button>
 			<div class="collapse" id="collapseExample-g1">
 			  <div class="card card-body">
@@ -192,23 +185,25 @@
 </section>
 
 <!-- Journey -->
-<section class="journey">
-  <div class="row d-flex">
-    <div class="col-12 col-sm-6 text">
-      <h2>Lorem Ipsum is simply dummy.</h2>
-      <ul>
-        <li>Lorem Ipsum is not simply random text</li>
-        <li>Lorem Ipsum is not simply random text</li>
-      </ul>
-      <div class="button">
-        <button class="btn">apply now</button>
-        <button class="btn">learn about our camp</button>
-      </div>
+<section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
+
+  <?php $group = get_field('group_s5'); 
+        if($group):
+    ?>
+    <div class="over-lay"></div>
+    <div class="row">
+        <div class="col-12 col-sm-6 text">
+            <h2><?php echo $group['title_s5']; ?></h2>
+            <?php the_field('text_s5', $post->ID); ?>
+            <div class="button">
+                <button class="btn btn-blue"><?php echo $group['apply_button_s5']; ?></button>
+                <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
+        </div>
     </div>
-    <div class="col-12 col-sm-6 image">
-      <img src="<?php bloginfo('template_url'); ?>/data/image/slide1.jpg">
-    </div>
-  </div>  
+  <?php endif; ?>
 </section>
-<!-- end FAQ -->
+<!-- End Journey -->
 <?php  get_footer(); ?>

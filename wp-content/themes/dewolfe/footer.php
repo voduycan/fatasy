@@ -39,12 +39,18 @@
 			
 		</div>
 		<div class="col-12 col-sm-3 social d-flex">
-			<a target="_blank" href="<?php the_field('facebook', 'options'); ?>"><span class="icon-facebook"></span></a>
-			<a target="_blank" href="<?php the_field('twitter', 'options'); ?>"><span class="icon-twitter"></span></a>
-			<a target="_blank" href="<?php the_field('instagram', 'options'); ?>"><span class="icon-instagram"></span></a>
+			<?php if(get_field('facebook', 'options')): ?>
+				<a target="_blank" href="<?php the_field('facebook', 'options'); ?>"><span class="icon-facebook"></span></a>
+			<?php endif; ?>
+			<?php if(get_field('twitter', 'options')): ?>
+				<a target="_blank" href="<?php the_field('twitter', 'options'); ?>"><span class="icon-twitter"></span></a>
+			<?php endif; ?>
+			<?php if(get_field('instagram', 'options')): ?>
+				<a target="_blank" href="<?php the_field('instagram', 'options'); ?>"><span class="icon-instagram"></span></a>
+			<?php endif; ?>
 		</div>
 		<div class="col-12 col-sm-12 copy-right">
-			<p><?php the_field('copy_right', 'options'); ?><span class="icon-copyright"></span><?php the_field('reseved', 'options'); ?></p>
+			<p><?php the_field('copy_right', 'options'); ?></p>
 		</div>
 
 	</div>

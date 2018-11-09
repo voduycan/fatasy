@@ -12,18 +12,6 @@
 
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <?php $group = get_field('group_s1'); 
-        if($group):
-    ?>
-
-        <div class="caption">
-            <h1><?php echo $group['title']; ?></h1>
-            <?php the_field('text_s1', $post->ID); ?>
-            <button class="btn btn-blue"><?php echo $group['button']; ?></button>
-        </div>
-        <button id="scroll-down"><span><?php echo $group['scroll_down']; ?></span></button>
-    <?php endif; ?>
-
     <div class="overflow full-device-width">
         <?php if( have_rows('images_s1')): $n = 0; ?>
             <div class="carousel-inner">
@@ -38,15 +26,29 @@
             </div>
         <?php endif; ?>
                
-        <ol class="carousel-indicators">
+        
+    </div>
+    <?php $group = get_field('group_s1'); 
+        if($group):
+    ?>
+
+        <div class="caption">
+            <h1><?php echo $group['title']; ?></h1>
+            <?php the_field('text_s1', $post->ID); ?>
+            <button class="btn btn-blue"><?php echo $group['button']; ?></button>
+            <ol class="carousel-indicators">
             <?php if($n > 1): ?>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <?php for ($i=1; $i < $n; $i++): ?> 
                         <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
                     <?php endfor; ?>
-            <?php endif; ?>
-        </ol>	
-    </div>
+                <?php endif; ?>
+            </ol>   
+        </div>
+        <button id="scroll-down"><span><?php echo $group['scroll_down']; ?></span></button>
+    <?php endif; ?>
+
+    
     <?php if($n > 1): ?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -133,7 +135,7 @@
                 $company = get_sub_field('company');
             ?>
                 <div>
-                    <div class="row d-flex">
+                    <div class="row">
                         <div class="col-12 col-sm-5 px-4">
                             <div class="elip">
                                 <div class="elip-big">
@@ -159,19 +161,24 @@
 
 <!-- Journey -->
 <section class="journey" style="background-image: url('<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-jouney.png'), url('<?php the_field('background_big_s5', $post->ID); ?>')">
+
+  <?php $group = get_field('group_s5'); 
+        if($group):
+    ?>
     <div class="over-lay"></div>
-    <div class="row d-flex">
+    <div class="row">
         <div class="col-12 col-sm-6 text">
-            <h2><?php the_field('title_s5', $post->ID); ?></h2>
+            <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
-                <button class="btn btn-blue"><?php the_field('apply_button_s5', $post->ID); ?></button>
-                <button class="btn btn-light"><?php the_field('learn_button_s5', $post->ID); ?></button>
+                <button class="btn btn-blue"><?php echo $group['apply_button_s5']; ?></button>
+                <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>
         <div class="col-12 col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
         </div>
     </div>
+  <?php endif; ?>
 </section>
 <!-- End Journey -->
 <?php  get_footer(); ?>

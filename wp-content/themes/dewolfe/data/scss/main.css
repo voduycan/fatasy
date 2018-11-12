@@ -178,8 +178,7 @@
   content: "\e902"; }
 
 .icon-bottom:before {
-  content: "\e900";
-  color: #0685f3; }
+  content: "\e900"; }
 
 .icon-facebook:before {
   content: "\ea90"; }
@@ -401,6 +400,18 @@ h3 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 26px; }
+
+h4 {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 24px; }
+
+h5 {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1;
+  letter-spacing: 0; }
 
 a:focus, button:focus {
   outline: 0; }
@@ -789,7 +800,7 @@ footer {
       display: block !important; }
     #carouselExampleIndicators .caption ul li {
       margin-left: 1.3em;
-      font-size: 12px; }
+      font-size: 16px; }
     #carouselExampleIndicators .caption p {
       margin-bottom: 20px; }
     #carouselExampleIndicators .caption h1 {
@@ -807,6 +818,8 @@ footer {
         #carouselExampleIndicators .caption h1 {
           font-size: 28px;
           margin-bottom: 10px; }
+        #carouselExampleIndicators .caption ul li {
+          font-size: 14px; }
         #carouselExampleIndicators .caption p {
           width: 70%;
           margin-left: auto;
@@ -1103,6 +1116,7 @@ footer {
       padding: 3rem; }
       .journey .row .text h2 {
         color: #0D2645;
+        width: 100%;
         margin-bottom: 2rem; }
         @media all and (max-width: 576px) {
           .journey .row .text h2 {
@@ -1122,11 +1136,15 @@ footer {
             .journey .row .text ul li {
               font-size: 14px;
               margin-bottom: 10px; } }
-      @media all and (max-width: 576px) {
-        .journey .row .text .btn {
-          width: 235px; } }
-      .journey .row .text .btn-blue {
+      .journey .row .text .button .btn-blue {
         margin-right: 20px; }
+      @media all and (max-width: 576px) {
+        .journey .row .text .button {
+          text-align: center; }
+          .journey .row .text .button .btn {
+            width: 235px; }
+          .journey .row .text .button .btn-blue {
+            margin-right: 0; } }
     .journey .row .image {
       height: 450px;
       background-repeat: no-repeat;
@@ -1201,12 +1219,16 @@ footer {
     #carouselExampleIndicators.product-panel .caption .btn {
       width: 285px; } }
   #carouselExampleIndicators.product-panel .caption .btn-light {
+    margin-left: 10px;
     border: none; }
     @media all and (max-width: 576px) {
       #carouselExampleIndicators.product-panel .caption .btn-light {
-        margin-right: 0; } }
+        margin-left: 0; } }
   #carouselExampleIndicators.product-panel .caption .btn-blue {
-    margin-right: 20px; }
+    margin-right: 10px; }
+    @media all and (max-width: 576px) {
+      #carouselExampleIndicators.product-panel .caption .btn-blue {
+        margin-right: 0; } }
   #carouselExampleIndicators.product-panel .caption ul {
     font-weight: 400; }
     @media all and (max-width: 576px) {
@@ -1278,6 +1300,56 @@ footer {
         .curriculum .foundation .card .card-img-top {
           padding: 20px 0; }
         .curriculum .foundation .card .card-body {
+          max-height: 130px;
+          min-height: 130px; } }
+  .curriculum .Practical {
+    margin: 30px -15px; }
+    .curriculum .Practical .slick-prev, .curriculum .Practical .slick-next {
+      background: none;
+      padding: 0; }
+      .curriculum .Practical .slick-prev span, .curriculum .Practical .slick-next span {
+        font-size: 25px;
+        color: #434343; }
+      .curriculum .Practical .slick-prev:hover span, .curriculum .Practical .slick-next:hover span {
+        color: #0685F3; }
+    @media all and (max-width: 576px) {
+      .curriculum .Practical .slick-prev {
+        top: 50%;
+        left: -5px; }
+      .curriculum .Practical .slick-next {
+        top: 50%;
+        right: 0; } }
+    .curriculum .Practical .card {
+      margin: 15px;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .curriculum .Practical .card:hover {
+        box-shadow: 0px 0px 15px 2px rgba(35, 35, 35, 0.2);
+        -ms-transform: scale(1.01);
+        /* IE 9 */
+        -webkit-transform: scale(1.01);
+        /* Safari */
+        transform: scale(1.01); }
+      .curriculum .Practical .card .card-img-top {
+        padding: 40px 0; }
+        .curriculum .Practical .card .card-img-top img {
+          height: 110px;
+          width: auto;
+          margin: 0 auto; }
+      .curriculum .Practical .card .card-body {
+        padding-top: 0;
+        max-height: 170px;
+        min-height: 170px; }
+        .curriculum .Practical .card .card-body .card-title {
+          padding-top: 0;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          text-transform: uppercase; }
+      @media all and (max-width: 576px) {
+        .curriculum .Practical .card .card-img-top {
+          padding: 20px 0; }
+        .curriculum .Practical .card .card-body {
           max-height: 130px;
           min-height: 130px; } }
 
@@ -1427,7 +1499,8 @@ footer {
     .trips .slider .slick-prev, .trips .slider .slick-next {
       background: none;
       padding: 0;
-      margin-top: -5px; }
+      margin-top: -5px;
+      height: 30px; }
       .trips .slider .slick-prev span, .trips .slider .slick-next span {
         font-size: 25px;
         color: #434343; }
@@ -1535,19 +1608,58 @@ footer {
   background: #fff; }
   .faq h2 {
     text-align: center; }
-  .faq .group {
-    margin-bottom: 1rem; }
-    .faq .group button {
-      width: 100%;
-      background: #E9F4FB;
-      color: #0685F3;
-      text-align: left;
-      position: relative; }
-      .faq .group button span {
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%); }
+  .faq ul li {
+    color: #0685F3;
+    margin-left: 1.3rem; }
+    .faq ul li h4 {
+      margin-top: 30px;
+      margin-bottom: 20px; }
+      @media all and (max-width: 576px) {
+        .faq ul li h4 {
+          font-size: 20px; } }
+    .faq ul li .group {
+      margin-bottom: 1rem; }
+      .faq ul li .group .btn-collapse {
+        width: 100%;
+        background: #0685F3;
+        color: #fff;
+        text-align: left;
+        position: relative;
+        font-size: 16px;
+        font-weight: 600;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        .faq ul li .group .btn-collapse span {
+          position: absolute;
+          font-size: 14px;
+          right: 16px;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          color: #fff;
+          -webkit-transition: color 0.2s ease-in-out;
+          transition: color 0.2s ease-in-out;
+          -webkit-transform: rotateX(180deg) translateY(50%);
+          -ms-transform: rotateX(180deg) translateY(50%);
+          transform: rotateX(180deg) translateY(50%); }
+        @media all and (max-width: 576px) {
+          .faq ul li .group .btn-collapse {
+            font-size: 14px; }
+            .faq ul li .group .btn-collapse span {
+              font-size: 10px; } }
+        .faq ul li .group .btn-collapse.collapsed {
+          background: #E9F4FB;
+          color: #0685F3; }
+          .faq ul li .group .btn-collapse.collapsed span {
+            color: #0685F3;
+            -webkit-transform: rotateX(0) translateY(-50%);
+            -ms-transform: rotateX(0) translateY(-50%);
+            transform: rotateX(0) translateY(-50%); }
+      .faq ul li .group .collapsing .card-body {
+        color: #4F4F4F;
+        border: none; }
+      .faq ul li .group .collapse .card-body {
+        border: none;
+        color: #4F4F4F; }
 
 /*# sourceMappingURL=main.css.map */

@@ -31,6 +31,32 @@ $(function() {
 	        }
 	    ]
 	});
+	$('.Practical').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+   		responsive: [
+	        {
+	        	breakpoint: 992,
+	            settings: {
+	                slidesToShow: 3,
+	            }
+	        },
+	        {
+	        	breakpoint: 768,
+	            settings: {
+	                slidesToShow: 2,
+	            }
+	        },
+	        {
+	        	breakpoint: 576,
+	            settings: {
+	                slidesToShow: 1,
+	            }
+	        }
+	    ]
+	});
 	$('.staff').slick({
 		slidesToShow: 3,
 		slidesToScroll: 1,
@@ -77,8 +103,11 @@ $(function() {
         $('#no-1').addClass('active');
         $('.foundation .slick-prev').append('<span class="icon-left-arrow"></span>');
         $('.foundation .slick-next').append('<span class="icon-right-arrow"></span>');
+        $('.Practical .slick-prev').append('<span class="icon-left-arrow"></span>');
+        $('.Practical .slick-next').append('<span class="icon-right-arrow"></span>');
      	$('.trips .slick-prev').append('<span class="icon-left-arrow"></span>');
         $('.trips .slick-next').append('<span class="icon-right-arrow"></span>');
+        $('.btn-collapse').addClass('collapsed');
     });
     if($(document).scrollTop() >= $("header").height()){
     	$('header').addClass('to-fixed');

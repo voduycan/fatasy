@@ -14,10 +14,13 @@
 
 ?>
 <footer>
+	<?php $group = get_field('group_footer', 'options'); 
+        if($group):
+    ?>
 	<div class="row">
 		<div class="col-12 col-sm-3 footer-logo">
 			<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
-			<a class="email" href="mailto:edu@dewolfe.io"><?php the_field('email', 'options'); ?></a>
+			<a class="email" href="mailto:edu@dewolfe.io"><?php echo $group['email']; ?></a>
 			
 		</div>
 		<div class="col-12 col-sm-6 menu d-flex">
@@ -39,21 +42,22 @@
 			
 		</div>
 		<div class="col-12 col-sm-3 social d-flex">
-			<?php if(get_field('facebook', 'options')): ?>
-				<a target="_blank" href="<?php the_field('facebook', 'options'); ?>"><span class="icon-facebook"></span></a>
+			<?php if($group['facebook']): ?>
+				<a target="_blank" href="<?php echo $group['facebook']; ?>"><span class="icon-facebook"></span></a>
 			<?php endif; ?>
-			<?php if(get_field('twitter', 'options')): ?>
-				<a target="_blank" href="<?php the_field('twitter', 'options'); ?>"><span class="icon-twitter"></span></a>
+			<?php if($group['twitter']): ?>
+				<a target="_blank" href="<?php echo $group['twitter']; ?>"><span class="icon-twitter"></span></a>
 			<?php endif; ?>
-			<?php if(get_field('instagram', 'options')): ?>
-				<a target="_blank" href="<?php the_field('instagram', 'options'); ?>"><span class="icon-instagram"></span></a>
+			<?php if($group['instagram']): ?>
+				<a target="_blank" href="<?php echo $group['instagram']; ?>"><span class="icon-instagram"></span></a>
 			<?php endif; ?>
 		</div>
 		<div class="col-12 col-sm-12 copy-right">
-			<p><?php the_field('copy_right', 'options'); ?></p>
+			<p><?php echo $group['copy_right']; ?></p>
 		</div>
 
 	</div>
+<?php endif; ?>
 </footer>
 </div>
 <!-- Boostrap -->

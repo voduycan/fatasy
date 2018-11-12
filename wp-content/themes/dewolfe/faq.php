@@ -12,9 +12,9 @@
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide product-panel" data-ride="carousel">
   <div class="overflow full-device-width">
-        <?php if( have_rows('images_s1')): $n = 0; ?>
+        <?php if( have_rows('images_s1_f')): $n = 0; ?>
             <div class="carousel-inner">
-                <?php while( have_rows('images_s1') ): the_row();
+                <?php while( have_rows('images_s1_f') ): the_row();
                     // vars
                     $image = get_sub_field('image');
                     $n++;
@@ -27,15 +27,15 @@
                
         
     </div>
-    <?php $group = get_field('group_s1'); 
+    <?php $group = get_field('group_s1_f'); 
         if($group):
     ?>
 
         <div class="caption">
             <div class="cap">
-                <h1><?php echo $group['title']; ?></h1>
-                <?php the_field('text_s1', $post->ID); ?>
-                <button class="btn btn-blue"><?php echo $group['button_1']; ?></button>
+                <h1><?php echo $group['title_f']; ?></h1>
+                <?php the_field('text_s1_f', $post->ID); ?>
+                <button class="btn btn-blue"><?php echo $group['button_f']; ?></button>
             </div>
             <ol class="carousel-indicators">
             <?php if($n > 1): ?>
@@ -64,124 +64,56 @@
 <!-- End Top panel -->
 <!-- FAQ -->
 <section class="faq">
-	<h2>faq</h2>
+	<h2><?php the_field('title_section', $post->ID); ?></h2>
 
-	<!-- Genaral -->
-	<div class="genaral">
-		<h3>genarals (6)</h3>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g1" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-                <span class="icon-bottom"></span>
-			</button>
-			<div class="collapse" id="collapseExample-g1">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g2" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-g2">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g3" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-g3">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g4" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-g4">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g5" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-g5">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-g6" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-g6">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-	</div>
-	<!-- End Genaral -->
-	<!-- Application -->
-	<div class="genaral">
-		<h3>the application process (9)</h3>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-a1" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-a1">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-a2" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-a2">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-	</div>
-	<!-- End Application -->
-	<!-- travel -->
-	<div class="genaral">
-		<h3>the application process (9)</h3>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-t1" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-t1">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-		<div class="group">
-			<button class="my-btn" type="button" data-toggle="collapse" data-target="#collapseExample-t2" aria-expanded="false" aria-controls="collapseExample">
-				Button with data-target
-			</button>
-			<div class="collapse" id="collapseExample-t2">
-			  <div class="card card-body">
-			    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-			  </div>
-			</div>
-		</div>
-	</div>
-	<!-- End travel -->
+    <?php if( have_rows('topic') ): $x = 0; ?>
+
+	   <ul>
+            <?php while( have_rows('topic') ): the_row(); 
+            // vars
+            $title = get_sub_field('title');
+            $x++;
+            ?>
+             <li>
+                <?php if( have_rows('questions') ): $count = 0;?>
+                    <?php while( have_rows('questions') ): the_row(); 
+                        $count++;
+                    ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+                <h4><?php echo $title; ?> (<?php echo $count; ?>)</h4>
+
+                <?php if( have_rows('questions') ): $z = 0; ?>
+                    <?php while( have_rows('questions') ): the_row(); 
+                        // vars
+                        $ask = get_sub_field('ask');
+                        $answer = get_sub_field('answer');
+                        $z++;
+
+                    ?>
+                    <div class="group">
+                        <button class="btn-collapse" type="button" data-toggle="collapse" data-target="#collapseExample-<?php echo $x; ?><?php echo $z; ?>" aria-expanded="false" aria-controls="collapseExample">
+                            <?php echo $ask; ?>
+                            <span class="icon-bottom"></span>
+                        </button>
+                        <div class="collapse" id="collapseExample-<?php echo $x; ?><?php echo $z; ?>">
+                          <div class="card card-body">
+                            <?php echo $answer; ?>
+                          </div>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+                
+             </li> 
+            <?php endwhile; ?>
+        </ul>
+    <?php endif; ?>
+
+
+       
+	
 </section>
 
 <!-- Journey -->

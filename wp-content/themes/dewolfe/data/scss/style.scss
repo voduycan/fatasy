@@ -27,6 +27,18 @@ h3{
     font-weight: $bold;
     font-size: $size-h3;
 }
+h4{
+    text-transform: capitalize;
+    font-weight: $semiBold;
+    font-size: $size-h4;
+}
+h5{
+    font-size: $size-h5;
+    font-weight: $semiBold;
+    text-transform: capitalize;
+    line-height: 1;
+    letter-spacing: 0;
+}
 a:focus, button:focus{
     outline: 0;
 }
@@ -440,7 +452,7 @@ footer{
         ul{
             li{
                 margin-left: 1.3em;
-                font-size: $size-small;
+                font-size: $size-normal;
             }
         }
         p{
@@ -462,6 +474,11 @@ footer{
             h1{
                 font-size: $size-h2 - 4;
                  margin-bottom: 10px;
+            }
+            ul{
+                li{
+                    font-size: $size-normal - 2;
+                }
             }
             p{
                 width: 70%;
@@ -818,6 +835,7 @@ footer{
             padding: 3rem;
             h2{
                 color: $color-navy;
+                width: 100%;
                 margin-bottom: 2rem;
                 @media all and (max-width: 576px){
                     margin-bottom: 1rem;
@@ -840,13 +858,19 @@ footer{
                     }
                 }
             }
-            .btn{
-                @media all and (max-width: 576px){
-                    width: 235px;
+            .button{
+                .btn-blue{
+                    margin-right: 20px;
                 }
-            }
-            .btn-blue{
-                margin-right: 20px;
+                @media all and (max-width: 576px){
+                    text-align: center;
+                    .btn{
+                        width: 235px;
+                    }
+                    .btn-blue{
+                        margin-right: 0;
+                    }
+                }
             }
             
             
@@ -935,13 +959,18 @@ footer{
             }
         }
         .btn-light{
+
+            margin-left: 10px;
             border: none;
             @media all and (max-width: 576px){
-                margin-right: 0;
+                margin-left: 0;
             }
         }
         .btn-blue{
-            margin-right: 20px;
+            margin-right: 10px;
+            @media all and (max-width: 576px){
+                margin-right: 0;
+            }
         }
         ul{
             font-weight: $regular;
@@ -974,6 +1003,71 @@ footer{
         }
     }
     .foundation{
+        margin: 30px -15px;
+        .slick-prev, .slick-next{
+           background: none;
+            padding: 0;
+            span{
+                font-size: 25px;
+                color: $color-arrow;
+
+            }
+            &:hover{
+                span{
+                    color: $color-blue;
+                }
+            }
+        }
+        @media all and (max-width: 576px){
+            .slick-prev{
+                top: 50%;
+                left: -5px;
+            }
+            .slick-next{
+                top: 50%;
+                right: 0;
+            }
+        }
+        
+        .card{
+            margin: 15px;
+            @include transition(all 0.2s ease-in-out);
+            &:hover{
+                box-shadow: 0px 0px 15px 2px rgba(35, 35, 35, 0.2);
+                @include scale(1.01);
+            }
+            .card-img-top{
+                padding: 40px 0;
+                img{
+                    height: 110px;
+                    width: auto;
+                    margin: 0 auto;
+                }
+            }
+            .card-body{
+                padding-top: 0;
+                max-height: 170px;
+                min-height: 170px;
+                .card-title{
+                    padding-top: 0;
+                    font-size: $size-normal;
+                    font-weight: $bold;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                }
+            }
+            @media all and (max-width: 576px){
+                .card-img-top{
+                    padding: 20px 0;
+                }
+                 .card-body{
+                    max-height: 130px;
+                    min-height: 130px;
+                }
+            }
+        }
+    }
+    .Practical{
         margin: 30px -15px;
         .slick-prev, .slick-next{
            background: none;
@@ -1205,6 +1299,7 @@ footer{
             background: none;
             padding: 0;
             margin-top: -5px;
+            height: 30px;
             span{
                 font-size: 25px;
                 color: $color-arrow;
@@ -1345,19 +1440,66 @@ footer{
     h2{
         text-align: center;
     }
-    .group{
-        margin-bottom: 1rem;
-        button{
-            width: 100%;
-            background: $bg-blue-light;
+    ul{
+        li{
             color: $color-blue;
-            text-align: left;
-            position: relative;
-            span{
-                position: absolute;
-                right: 16px;
-                top: 50%;
-                @include translateY(-50%);
+            margin-left: 1.3rem;
+            h4{
+                margin-top: 30px;
+                margin-bottom: 20px;
+                @media all and (max-width: 576px){
+                    font-size: $size-h4 - 4;
+                }
+            }
+            .group{
+                margin-bottom: 1rem;
+                .btn-collapse{
+                    width: 100%;
+                    background: $bg-blue;
+                    color: $color-white;
+                    text-align: left;
+                    position: relative;
+                    font-size: $size-normal;
+                    font-weight: $semiBold;
+                    @include transition(all 0.2s ease-in-out);
+
+                    span{
+                        position: absolute;
+                        font-size: $size-normal - 2;
+                        right: 16px;
+                        top: 50%;
+                        @include translateY(-50%);
+                        color: $color-white;
+                        @include transition(color 0.2s ease-in-out);
+                        @include rotateX-translate(180deg, 50%);
+                    }
+                    @media all and (max-width: 576px){
+                        font-size: $size-normal - 2;
+                        span{
+                            font-size: $size-normal - 6;
+                        }
+                    }
+                    &.collapsed{
+                        background: $bg-blue-light;
+                        color: $color-blue;
+                        span{
+                            color: $color-blue;
+                             @include rotateX-translate(0, -50%);
+                        }
+                    }
+                }
+                .collapsing{
+                    .card-body{
+                        color: $color-collapse;
+                        border: none;
+                    }
+                }
+                .collapse{
+                    .card-body{
+                        border: none;
+                        color: $color-collapse;
+                    }
+                }
             }
         }
     }

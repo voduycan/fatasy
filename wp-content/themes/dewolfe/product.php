@@ -36,7 +36,7 @@
                 <h1><?php echo $group['title']; ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
                 <button class="btn btn-blue"><?php echo $group['button_pro_1']; ?></button>
-                <a href="<?php echo $group['button_link_2']; ?>" class="btn btn-light"><?php echo $group['button_pro_2']; ?></a>
+                <a target="_blank" href="<?php echo $group['button_link_2']; ?>" class="btn btn-light"><?php echo $group['button_pro_2']; ?></a>
             </div>
             <ol class="carousel-indicators">
             <?php if($n > 1): ?>
@@ -68,10 +68,37 @@
 <section class="curriculum text-center">
   <h2><?php the_field('title_s2', $post->ID); ?></h2>
   <p class="text"><?php the_field('text_s2', $post->ID); ?></p>
-
+  <h5><?php the_field('foundation_title', $post->ID); ?></h5>
   <?php if( have_rows('card_s2') ): ?>
   <div class="foundation slider">
     <?php while( have_rows('card_s2') ): the_row(); 
+
+    // vars
+    $title = get_sub_field('title');
+    $text = get_sub_field('text');
+    $image = get_sub_field('image');
+
+    ?>
+    <div>
+      <div class="card">
+        <div class="card-img-top">
+          <img src="<?php echo $image; ?>" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><?php echo $title; ?></h5>
+          <p class="card-text"><?php echo $text; ?></p>
+        </div>
+      </div>
+    </div>
+
+    <?php endwhile; ?>
+  </div>
+  <?php endif; ?>
+
+  <h5><?php the_field('practical_title', $post->ID); ?></h5>
+  <?php if( have_rows('card_s2') ): ?>
+  <div class="Practical slider">
+    <?php while( have_rows('card_s2_2') ): the_row(); 
 
     // vars
     $title = get_sub_field('title');

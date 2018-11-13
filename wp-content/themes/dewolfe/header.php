@@ -79,6 +79,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header d-flex"style="background-image: url('<?php the_field('bg_img_modal', 'options'); ?>');">
+      	<div class="over-lay"></div>
         <h3><?php the_field('title_modal', 'options'); ?></h3>
       </div>
       <div class="modal-body">

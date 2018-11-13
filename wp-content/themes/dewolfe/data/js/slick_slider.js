@@ -104,8 +104,8 @@ $(function() {
 		if(hashcode){
 			$('html,body').animate({scrollTop: $('section'+hashcode).offset().top + 600}, 800);
 		}
-			
-
+		$('#submit .ajax-loader').addClass('icon-spinner');
+		$('#submit').parent('p').addClass('text-center');
         $('#no-1').addClass('active');
         $('.foundation .slick-prev').append('<span class="icon-left-arrow"></span>');
         $('.foundation .slick-next').append('<span class="icon-right-arrow"></span>');
@@ -114,6 +114,12 @@ $(function() {
      	$('.trips .slick-prev').append('<span class="icon-left-arrow"></span>');
         $('.trips .slick-next').append('<span class="icon-right-arrow"></span>');
         $('.btn-collapse').addClass('collapsed');
+        document.addEventListener( 'wpcf7submit', function( event ) {
+			setTimeout(function() {$('.wpcf7-response-output').fadeOut('1000','linear',true)}, 5 * 1000);
+			$('.wpcf7-validation-errors').append('<span class="icon-error"></span>');
+			$('.wpcf7-mail-sent-ng').append('<span class="icon-error"></span>');
+			$('.wpcf7-mail-sent-ok').append('<span class="icon-success"></span>');
+		}, false );
     });
     if($(document).scrollTop() >= $("header").height()){
     	$('header').addClass('to-fixed');

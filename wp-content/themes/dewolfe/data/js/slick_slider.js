@@ -3,13 +3,13 @@ $(function() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 4000,
 	});
 	$('.foundation').slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 4000,
    		responsive: [
 	        {
 	        	breakpoint: 992,
@@ -35,7 +35,7 @@ $(function() {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 4000,
    		responsive: [
 	        {
 	        	breakpoint: 992,
@@ -61,7 +61,7 @@ $(function() {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 4000,
    		responsive: [
 	        {
 	        	breakpoint: 768,
@@ -100,6 +100,12 @@ $(function() {
                 scrollTop: $(".our-client").offset().top
             }, 800);
         });
+		var hashcode = window.location.hash;
+		if(hashcode){
+			$('html,body').animate({scrollTop: $('section'+hashcode).offset().top + 600}, 800);
+		}
+			
+
         $('#no-1').addClass('active');
         $('.foundation .slick-prev').append('<span class="icon-left-arrow"></span>');
         $('.foundation .slick-next').append('<span class="icon-right-arrow"></span>');
@@ -113,7 +119,6 @@ $(function() {
     	$('header').addClass('to-fixed');
     }
     $(window).scroll(function(){
-    	console.log();
 	    if($(document).scrollTop() >= $("header").height()){
 	    	$('header').addClass('to-fixed');
 	    	$('header').removeClass('ha-header-hide');

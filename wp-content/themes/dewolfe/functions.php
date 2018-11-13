@@ -49,6 +49,9 @@ function my_acf_admin_head() {
     	#group_s1 .acf-fields{
     		border: none;
     	}
+    	.d-none{
+    		display: none !important;
+    	}
     </style>
     <?php
 }

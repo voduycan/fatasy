@@ -84,7 +84,15 @@
         }
     }
 }
-
+@mixin padding(){
+    padding: 0 $padding;
+    @media all and (max-width: 992px){
+        padding: 0 $padding-tablet;
+    }
+        @media all and (max-width: 576px){
+        padding: 0 $padding-mobile;
+    }
+}
 //CSS3 animation to-down
 //----------------------------------
 @keyframes to-down{

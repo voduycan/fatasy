@@ -13,6 +13,7 @@
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="overflow full-device-width">
+        <div class="over-lay"></div>
         <?php if( have_rows('images_s1')): $n = 0; ?>
             <div class="carousel-inner">
                 <?php while( have_rows('images_s1') ): the_row();
@@ -35,7 +36,7 @@
         <div class="caption">
             <h1><?php echo $group['title']; ?></h1>
             <?php the_field('text_s1', $post->ID); ?>
-            <button class="btn btn-blue"><?php echo $group['button']; ?></button>
+            <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['button']; ?></button>
             <ol class="carousel-indicators">
             <?php if($n > 1): ?>
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -171,7 +172,7 @@
             <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
-                <button class="btn btn-blue"><?php echo $group['apply_button_s5']; ?></button>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['apply_button_s5']; ?></button>
                 <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>

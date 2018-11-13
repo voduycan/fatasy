@@ -74,3 +74,19 @@
 			</div>
 		</nav>
 	</header>
+	<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex"style="background-image: url('<?php the_field('bg_img_modal', 'options'); ?>');">
+        <h3><?php the_field('title_modal', 'options'); ?></h3>
+      </div>
+      <div class="modal-body">
+        <?php the_field('form_modal', 'options'); ?>
+      </div>
+      <div class="modal-footer">
+       <p><?php the_field('text_modal', 'options'); ?></p>
+      </div>
+    </div>
+  </div>
+</div>

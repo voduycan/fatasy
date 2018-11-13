@@ -12,6 +12,7 @@
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide product-panel" data-ride="carousel">
   <div class="overflow full-device-width">
+    <div class="over-lay"></div>
         <?php if( have_rows('images_s1')): $n = 0; ?>
             <div class="carousel-inner">
                 <?php while( have_rows('images_s1') ): the_row();
@@ -35,7 +36,7 @@
             <div class="cap">
                 <h1><?php echo $group['title']; ?></h1>
                 <?php the_field('text_s1', $post->ID); ?>
-                <button class="btn btn-blue"><?php echo $group['button_pro_1']; ?></button>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['button_pro_1']; ?></button>
                 <a target="_blank" href="<?php echo $group['button_link_2']; ?>" class="btn btn-light"><?php echo $group['button_pro_2']; ?></a>
             </div>
             <ol class="carousel-indicators">
@@ -122,7 +123,7 @@
   </div>
   <?php endif; ?>
     
-  <button class="btn btn-blue"><?php the_field('button_s2', $post->ID); ?></button>
+  <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php the_field('button_s2', $post->ID); ?></button>
 </section>
 <!-- End Slide -->
 <!-- Blockchain -->
@@ -178,7 +179,7 @@
 </section>
 <!-- End Blockchain -->
 <!-- our staff -->
-<section class="our-staff">
+<section class="our-staff" id="our-staff">
   <h2><?php the_field('title_s4', $post->ID) ?></h2>
   <img class="background-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip_2.png">
 
@@ -264,7 +265,7 @@
             <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
-                <button class="btn btn-blue"><?php echo $group['apply_button_s5']; ?></button>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['apply_button_s5']; ?></button>
                 <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>

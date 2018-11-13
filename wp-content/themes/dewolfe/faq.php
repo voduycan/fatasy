@@ -12,6 +12,7 @@
 <!-- Top Panel - Blockchain winter camp -->
 <section id="carouselExampleIndicators" class="carousel slide product-panel" data-ride="carousel">
   <div class="overflow full-device-width">
+    <div class="over-lay"></div>
         <?php if( have_rows('images_s1_f')): $n = 0; ?>
             <div class="carousel-inner">
                 <?php while( have_rows('images_s1_f') ): the_row();
@@ -35,7 +36,7 @@
             <div class="cap">
                 <h1><?php echo $group['title_f']; ?></h1>
                 <?php the_field('text_s1_f', $post->ID); ?>
-                <button class="btn btn-blue"><?php echo $group['button_f']; ?></button>
+                <a href="<?php bloginfo('url'); ?>/product/#our-staff" class="btn btn-light" id="link-to-staff"><?php echo $group['button_f']; ?></a>
             </div>
             <ol class="carousel-indicators">
             <?php if($n > 1): ?>
@@ -64,6 +65,7 @@
 <!-- End Top panel -->
 <!-- FAQ -->
 <section class="faq">
+     <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-blue.png">
 	<h2><?php the_field('title_section', $post->ID); ?></h2>
 
     <?php if( have_rows('topic') ): $x = 0; ?>
@@ -128,7 +130,7 @@
             <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
-                <button class="btn btn-blue"><?php echo $group['apply_button_s5']; ?></button>
+                <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['apply_button_s5']; ?></button>
                 <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>

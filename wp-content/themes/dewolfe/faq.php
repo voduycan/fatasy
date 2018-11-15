@@ -96,7 +96,7 @@
                     <div class="group">
                         <button class="btn-collapse" type="button" data-toggle="collapse" data-target="#collapseExample-<?php echo $x; ?><?php echo $z; ?>" aria-expanded="false" aria-controls="collapseExample">
                             <?php echo $ask; ?>
-                            <span class="icon-bottom"></span>
+                            <span class="icon-bottom icon-btn"></span>
                         </button>
                         <div class="collapse" id="collapseExample-<?php echo $x; ?><?php echo $z; ?>">
                           <div class="card card-body">
@@ -126,7 +126,7 @@
     ?>
     <div class="over-lay"></div>
     <div class="row">
-        <div class="col-12 col-sm-6 text">
+        <div class="col-sm-6 text">
             <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
@@ -134,7 +134,7 @@
                 <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>
-        <div class="col-12 col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
+        <div class="col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
         </div>
     </div>
   <?php endif; ?>

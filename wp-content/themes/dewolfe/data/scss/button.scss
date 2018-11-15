@@ -54,6 +54,8 @@
     &:hover{
         color: $color-white;
     }
+
+
 }
 .btn-blue{
     background: $bg-blue;
@@ -61,7 +63,13 @@
     &:hover{
         background: $blue-hover;
     }
+    &:focus{
+        background: $blue-hover;
+        outline: 0;
+        box-shadow: none;
+    }
 }
+
 .btn-light{
     background: $bg-white;
     border: 1px solid $color-black;
@@ -69,6 +77,11 @@
     &:hover{
         background: $light-hover;
         color: $color-white;
+    }
+     &:focus{
+        background: $light-hover;
+        color: $color-white;
+        box-shadow: none;
     }
 }
 #scroll-down{

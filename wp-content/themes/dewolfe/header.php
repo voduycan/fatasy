@@ -17,6 +17,15 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php if( have_rows('meta_tag','options') ): ?>
+    <?php while( have_rows('meta_tag','options') ): the_row(); 
+        // vars
+        $name = get_sub_field('name');
+        $content = get_sub_field('content');
+    ?>
+    <meta name="<?php echo $name; ?>" content="<?php echo $content; ?>">
+    <?php endwhile; ?>
+<?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
@@ -80,14 +89,19 @@
     <div class="modal-content">
       <div class="modal-header d-flex"style="background-image: url('<?php the_field('bg_img_modal', 'options'); ?>');">
       	<div class="over-lay"></div>
+        <span class="icon-error" id="close-modal"></span>
         <h3><?php the_field('title_modal', 'options'); ?></h3>
       </div>
       <div class="modal-body">
         <?php the_field('form_modal', 'options'); ?>
       </div>
       <div class="modal-footer">
-       <p><?php the_field('text_modal', 'options'); ?></p>
+       <?php the_field('text_modal', 'options'); ?>
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+    $('#submit-btn').val('<?php the_field('sign_up_button', 'options'); ?>');
+    $('#close').append('<button type="button" id="close-btn" class="btn btn-blue"><?php the_field('close_button', 'options'); ?></button>');
+</script>

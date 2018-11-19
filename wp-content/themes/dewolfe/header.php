@@ -17,15 +17,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php if( have_rows('meta_tag','options') ): ?>
-    <?php while( have_rows('meta_tag','options') ): the_row(); 
-        // vars
-        $name = get_sub_field('name');
-        $content = get_sub_field('content');
-    ?>
-    <meta name="<?php echo $name; ?>" content="<?php echo $content; ?>">
-    <?php endwhile; ?>
-<?php endif; ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
@@ -34,6 +25,15 @@
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/data/bootstrap/css/bootstrap.min.css">
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url'); ?>/data/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/data/js/jquery.word-break-keep-all.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/data/js/jquery.trackpad-scroll-emulator.min.js"></script>
+
+<!-- Scroll -->
+<link type="text/css" href="<?php bloginfo('template_url'); ?>/data/scroll/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+<!-- the mousewheel plugin - optional to provide mousewheel support -->
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/data/scroll/jquery.mousewheel.js"></script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/data/scroll/jquery.jscrollpane.min.js"></script>
 
 <!-- Slick -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/data/slick/slick.css">

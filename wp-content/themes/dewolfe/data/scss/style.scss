@@ -37,6 +37,13 @@ h5{
     line-height: 1;
     letter-spacing: 0;
 }
+h1,h2,h3,h4,h5,p{
+    span{
+        font-weight: inherit !important;
+        font-size: inherit !important;
+        font-style: unset !important;
+    }
+}
 a:focus, button:focus{
     outline: 0;
 }
@@ -57,6 +64,7 @@ section{
         padding: 50px $padding-mobile;
     }
 }
+
 #exampleModal{
     .modal-dialog{
         width: 90%;
@@ -497,7 +505,6 @@ footer{
         justify-content: center;
         align-items: center;
         ul{
-
             list-style-type: none;
             width: 100%;
             text-align: center;
@@ -520,7 +527,7 @@ footer{
                     @include hover($color-black);
                     
                 }
-                &:nth-child(3){
+                &:last-child{
                     margin-right: 0;
                 }
             }
@@ -556,7 +563,7 @@ footer{
             margin: 0;
             font-size: $size-normal - 1;
             text-transform: capitalize;
-            margin-top: -1.5rem;
+            margin-top: -1.3rem;
             @include fit-content-width;
             margin-left: auto;
             margin-right: auto;
@@ -565,6 +572,7 @@ footer{
             }
              @media all and (max-width: 576px){
                 margin-top: 0;
+                font-size: $size-normal - 2;
             }
         }
     }
@@ -577,16 +585,21 @@ footer{
             text-align: center;
             img{
                 margin-left: 0; 
+                margin-bottom: 10px;
             }    
             .email{
                 @include fit-content-width;
-                margin: 1rem auto;
+                margin: 0 auto;
+                margin-bottom: 10px;
 
             }
         }
+        .menu{
+            margin-bottom: 10px;
+        }
         .social{
             justify-content: center;
-            margin: 1rem 0;
+            margin-bottom: 10px;
         }
     }
 }
@@ -756,27 +769,17 @@ footer{
         width: 265px;
         height: auto;
         display: inline-block;
-        margin: 0 50px;
-        &:nth-child(2){
-            margin-left: 0;
-        }
-        &:nth-child(3){
-            margin-right: 0;
-        }
+        margin: 20px 25px;
     }
     .client{
         width: 198px;
         height: auto;
         display: inline-block;
-        margin: 0 20px 20px 0;
-        &:last-child{
-            margin-right: 0;
-        }
+        margin: 20px;
         
     }
      @media all and (max-width: 768px){
         .taught{
-            margin: 0 30px;
             width: 190px;
         }
         .client{
@@ -784,20 +787,16 @@ footer{
         }
     }
     @media all and (max-width: 576px){
+        h2{
+            margin: 2rem auto;
+        }
         .taught{
             width: 133px;
+            margin: 10px;
         }
         .client{
-            &:nth-child(even){
-                width: 140px;
-                margin-right: 0;
-            }
-            &:nth-child(odd){
-                width: 166px;
-                margin-left: 0;
-            }
-
-            
+            margin: 10px;
+            width: 133px;
         }
     }
 }
@@ -1128,6 +1127,7 @@ footer{
         left: $padding;
         width: auto;
         max-width: 80%;
+        min-width: 80%;
         @media all and (max-width: 992px){
             left: $padding-tablet;
             
@@ -1146,13 +1146,24 @@ footer{
         .cap{
             background: $bg-black-opacity;
             padding: 50px;
+            .cap-scroll{
+                max-height: 35vh;
+                overflow-x: hidden;
+                width: 100% !important;
+            }
             @media all and (max-width: 992px){
                 padding: 25px;
+            }
+            @media all and (max-width: 576px){
+                padding: 15px;
             }
         }
         .btn{
             @media all and (max-width: 576px){
                 width: 285px;
+            }
+            @media all and (max-width: 414px){
+                width: 240px;
             }
         }
         .btn-light{
@@ -1476,7 +1487,42 @@ footer{
                     padding-left: 130px;
                 }
             }
+            @media all and (max-width: 576px){
+                .top{
+                    height: auto;
+                    padding: 0;
+                    position: unset;
+                    .border-big{
+                        width: 300px;
+                        height: 300px;
+                        position: unset;
+                        margin: 0 auto;
+                    }
+                    .info{
+                        position: absolute;
+                        bottom: 0;
+                        text-align: center;
+                        min-height: unset;
+                        width: 100%;
+                    }
+                }
+                .card-body{
+                    p{
+                        margin-bottom: 50px;
+                        text-align: center;
+                    }
+                }
+            }
+            @media all and (max-width: 414px){
+                .top{
+                    .border-big{
+                        height: 250px;
+                        width: 250px;
+                    }
+                }
+            }
         }
+
         
     }
 }
@@ -1723,6 +1769,22 @@ footer{
                     }
                 }
             }
+        }
+    }
+}
+#caption-home{
+    h1{
+        font-size: 80px !important;
+    }
+    p{
+        font-size: 25px !important;
+    }
+    @media all and (max-width: 576px){
+        h1{
+            font-size: 40px !important;
+        }
+        p{
+            font-size: 20px !important;
         }
     }
 }

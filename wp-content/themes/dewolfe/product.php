@@ -35,18 +35,22 @@
         <div class="caption">
             <div class="cap">
                 <h1><?php echo $group['title']; ?></h1>
-                <?php the_field('text_s1', $post->ID); ?>
+                <div class="cap-scroll">
+                    <?php the_field('text_s1', $post->ID); ?>
+                </div>
                 <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['button_pro_1']; ?></button>
                 <a target="_blank" href="<?php echo $group['button_link_2']; ?>" class="btn btn-light"><?php echo $group['button_pro_2']; ?></a>
             </div>
-            <ol class="carousel-indicators">
+            
             <?php if($n > 1): ?>
+              <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <?php for ($i=1; $i < $n; $i++): ?> 
                         <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
                     <?php endfor; ?>
+              </ol> 
             <?php endif; ?>
-        </ol> 
+        
         </div>
     <?php endif; ?>
 

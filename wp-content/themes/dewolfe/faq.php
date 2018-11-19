@@ -35,17 +35,21 @@
         <div class="caption">
             <div class="cap">
                 <h1><?php echo $group['title_f']; ?></h1>
-                <?php the_field('text_s1_f', $post->ID); ?>
+                <div class="cap-scroll">
+                    <?php the_field('text_s1_f', $post->ID); ?>
+                </div>
                 <a href="<?php bloginfo('url'); ?>/product/#our-staff" class="btn btn-light" id="link-to-staff"><?php echo $group['button_f']; ?></a>
             </div>
-            <ol class="carousel-indicators">
+           
             <?php if($n > 1): ?>
+                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <?php for ($i=1; $i < $n; $i++): ?> 
                         <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i; ?>"></li>
                     <?php endfor; ?>
+                 </ol> 
             <?php endif; ?>
-        </ol> 
+       
         </div>
     <?php endif; ?>
 

@@ -392,6 +392,11 @@ h5 {
   line-height: 1;
   letter-spacing: 0; }
 
+h1 span, h2 span, h3 span, h4 span, h5 span, p span {
+  font-weight: inherit !important;
+  font-size: inherit !important;
+  font-style: unset !important; }
+
 a:focus, button:focus {
   outline: 0; }
 
@@ -874,7 +879,7 @@ footer {
             transition: width 0.2s ease-in-out; }
           footer .menu ul li a:hover::after {
             width: 20px; }
-        footer .menu ul li:nth-child(3) {
+        footer .menu ul li:last-child {
           margin-right: 0; }
   footer .social {
     text-align: right;
@@ -903,7 +908,7 @@ footer {
       margin: 0;
       font-size: 15px;
       text-transform: capitalize;
-      margin-top: -1.5rem;
+      margin-top: -1.3rem;
       width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
@@ -913,7 +918,8 @@ footer {
         margin: 0 3px; }
       @media all and (max-width: 576px) {
         footer .copy-right p {
-          margin-top: 0; } }
+          margin-top: 0;
+          font-size: 14px; } }
   @media all and (max-width: 992px) {
     footer {
       padding: 1rem 50px; } }
@@ -923,15 +929,19 @@ footer {
       footer .footer-logo {
         text-align: center; }
         footer .footer-logo img {
-          margin-left: 0; }
+          margin-left: 0;
+          margin-bottom: 10px; }
         footer .footer-logo .email {
           width: -webkit-fit-content;
           width: -moz-fit-content;
           width: fit-content;
-          margin: 1rem auto; }
+          margin: 0 auto;
+          margin-bottom: 10px; }
+      footer .menu {
+        margin-bottom: 10px; }
       footer .social {
         justify-content: center;
-        margin: 1rem 0; } }
+        margin-bottom: 10px; } }
 
 .carousel-control-prev {
   left: 20px;
@@ -1080,33 +1090,26 @@ footer {
     width: 265px;
     height: auto;
     display: inline-block;
-    margin: 0 50px; }
-    .our-client .taught:nth-child(2) {
-      margin-left: 0; }
-    .our-client .taught:nth-child(3) {
-      margin-right: 0; }
+    margin: 20px 25px; }
   .our-client .client {
     width: 198px;
     height: auto;
     display: inline-block;
-    margin: 0 20px 20px 0; }
-    .our-client .client:last-child {
-      margin-right: 0; }
+    margin: 20px; }
   @media all and (max-width: 768px) {
     .our-client .taught {
-      margin: 0 30px;
       width: 190px; }
     .our-client .client {
       width: 175px; } }
   @media all and (max-width: 576px) {
+    .our-client h2 {
+      margin: 2rem auto; }
     .our-client .taught {
-      width: 133px; }
-    .our-client .client:nth-child(even) {
-      width: 140px;
-      margin-right: 0; }
-    .our-client .client:nth-child(odd) {
-      width: 166px;
-      margin-left: 0; } }
+      width: 133px;
+      margin: 10px; }
+    .our-client .client {
+      margin: 10px;
+      width: 133px; } }
 
 .our-camp {
   text-align: center;
@@ -1386,7 +1389,8 @@ footer {
   top: 50%;
   left: 100px;
   width: auto;
-  max-width: 80%; }
+  max-width: 80%;
+  min-width: 80%; }
   @media all and (max-width: 992px) {
     #carouselExampleIndicators.product-panel .caption {
       left: 50px; } }
@@ -1404,12 +1408,22 @@ footer {
   #carouselExampleIndicators.product-panel .caption .cap {
     background: rgba(38, 38, 38, 0.5);
     padding: 50px; }
+    #carouselExampleIndicators.product-panel .caption .cap .cap-scroll {
+      max-height: 35vh;
+      overflow-x: hidden;
+      width: 100% !important; }
     @media all and (max-width: 992px) {
       #carouselExampleIndicators.product-panel .caption .cap {
         padding: 25px; } }
+    @media all and (max-width: 576px) {
+      #carouselExampleIndicators.product-panel .caption .cap {
+        padding: 15px; } }
   @media all and (max-width: 576px) {
     #carouselExampleIndicators.product-panel .caption .btn {
       width: 285px; } }
+  @media all and (max-width: 414px) {
+    #carouselExampleIndicators.product-panel .caption .btn {
+      width: 240px; } }
   #carouselExampleIndicators.product-panel .caption .btn-light {
     margin-left: 10px;
     border: none; }
@@ -1677,6 +1691,29 @@ footer {
     @media all and (max-width: 992px) {
       .our-staff .staff .card .top {
         padding-left: 130px; } }
+    @media all and (max-width: 576px) {
+      .our-staff .staff .card .top {
+        height: auto;
+        padding: 0;
+        position: unset; }
+        .our-staff .staff .card .top .border-big {
+          width: 300px;
+          height: 300px;
+          position: unset;
+          margin: 0 auto; }
+        .our-staff .staff .card .top .info {
+          position: absolute;
+          bottom: 0;
+          text-align: center;
+          min-height: unset;
+          width: 100%; }
+      .our-staff .staff .card .card-body p {
+        margin-bottom: 50px;
+        text-align: center; } }
+    @media all and (max-width: 414px) {
+      .our-staff .staff .card .top .border-big {
+        height: 250px;
+        width: 250px; } }
 
 .trips {
   position: relative;
@@ -1878,5 +1915,15 @@ footer {
         color: #4F4F4F;
         padding-right: 2.5rem;
         text-align: justify; }
+
+#caption-home h1 {
+  font-size: 80px !important; }
+#caption-home p {
+  font-size: 25px !important; }
+@media all and (max-width: 576px) {
+  #caption-home h1 {
+    font-size: 40px !important; }
+  #caption-home p {
+    font-size: 20px !important; } }
 
 /*# sourceMappingURL=main.css.map */

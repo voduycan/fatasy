@@ -41,6 +41,9 @@
 			</ul>
 			
 		</div>
+		<?php
+			if(($group['facebook'])||($group['twitter'])||($group['instagram'])): 
+		?>
 		<div class="col-12 col-sm-3 social d-flex">
 			<?php if($group['facebook']): ?>
 				<a target="_blank" href="<?php echo $group['facebook']; ?>"><span class="icon-facebook"></span></a>
@@ -52,6 +55,7 @@
 				<a target="_blank" href="<?php echo $group['instagram']; ?>"><span class="icon-instagram"></span></a>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 		<div class="col-12 col-sm-12 copy-right">
 			<p><?php echo $group['copy_right']; ?></p>
 		</div>

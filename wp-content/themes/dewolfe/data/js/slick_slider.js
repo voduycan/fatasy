@@ -61,7 +61,7 @@ $(function() {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 4000,
+		autoplaySpeed: 444000,
    		responsive: [
 	        {
 	        	breakpoint: 768,
@@ -143,6 +143,14 @@ $(function() {
 		}
 	}, false );
 	$(document).ready(function (){
+		$('h1').wordBreakKeepAll();
+		$('h2').wordBreakKeepAll();
+		$('h3').wordBreakKeepAll();
+		$('h4').wordBreakKeepAll();
+		$('h5').wordBreakKeepAll();
+		$('p').wordBreakKeepAll();
+		$('ul li span').wordBreakKeepAll();
+		$('.cap-scroll').jScrollPane();
         $("#scroll-down").click(function() {
             $('html, body').animate({
                 scrollTop: $(".our-client").offset().top

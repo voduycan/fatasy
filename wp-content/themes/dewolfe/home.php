@@ -33,7 +33,7 @@
         if($group):
     ?>
 
-        <div class="caption">
+        <div class="caption" id="caption-home">
             <h1><?php echo $group['title']; ?></h1>
             <?php the_field('text_s1', $post->ID); ?>
             <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['button']; ?></button>

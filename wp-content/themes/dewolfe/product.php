@@ -35,9 +35,11 @@
         <div class="caption">
             <div class="cap">
                 <h1><?php echo $group['title']; ?></h1>
-                <div class="cap-scroll">
-                    <?php the_field('text_s1', $post->ID); ?>
-                </div>
+                <?php if(get_field('text_s1', $post->ID)): ?>
+                  <div class="cap-scroll">
+                      <?php the_field('text_s1', $post->ID); ?>
+                  </div>
+                <?php endif; ?>
                 <button class="btn btn-blue" data-toggle="modal" data-target="#exampleModal"><?php echo $group['button_pro_1']; ?></button>
                 <a target="_blank" href="<?php echo $group['button_link_2']; ?>" class="btn btn-light"><?php echo $group['button_pro_2']; ?></a>
             </div>
@@ -135,7 +137,7 @@
  <img class="bg-img" src="<?php bloginfo('template_url'); ?>/data/image/png/bg-elip-blue.png">
   <h2><?php the_field('title_s3', $post->ID) ?></h2>
   <div class="row">
-    <div class="col-12 col-sm-5 col-md-5">
+    <div class="col-12 col-sm-12 col-md-5">
       <div class="video">
         <div class="background" style="background-image: url('<?php the_field('image_s3', $post->ID) ?>');">
           <div class="play-button d-flex">
@@ -145,8 +147,8 @@
         <div class="play-video d-none"></div>
       </div>
     </div>
-    <div class="col-12 offset-sm-0 offset-md-1 col-sm-7 col-md-6 text-left">
-      <p><?php the_field('text_s3', $post->ID) ?></p>
+    <div class="col-12 offset-md-1 col-sm-12 col-md-6 text-left">
+      <?php the_field('text_s3', $post->ID) ?>
     </div>
   </div>
   <script type="text/javascript">
@@ -265,7 +267,7 @@
     ?>
     <div class="over-lay"></div>
     <div class="row">
-        <div class="col-sm-6 text">
+        <div class="my-col-md-6 text">
             <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
@@ -273,7 +275,7 @@
                 <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>
-        <div class="col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
+        <div class="my-col-md-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
         </div>
     </div>
   <?php endif; ?>

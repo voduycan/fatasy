@@ -61,10 +61,10 @@ $(function() {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 444000,
+		autoplaySpeed: 4000,
    		responsive: [
 	        {
-	        	breakpoint: 768,
+	        	breakpoint: 769,
 	            settings: {
 	                slidesToShow: 2,
 	            }
@@ -151,6 +151,7 @@ $(function() {
 		$('p').wordBreakKeepAll();
 		$('ul li span').wordBreakKeepAll();
 		$('.cap-scroll').jScrollPane();
+
         $("#scroll-down").click(function() {
             $('html, body').animate({
                 scrollTop: $(".our-client").offset().top
@@ -201,6 +202,9 @@ $(function() {
     if($(document).scrollTop() >= $("header").height()){
     	$('header').addClass('to-fixed');
     }
+    $( window ).resize(function() {
+		$('.cap-scroll').jScrollPane();
+	});
     $(window).scroll(function(){
 	    if($(document).scrollTop() >= $("header").height()){
 	    	$('header').addClass('to-fixed');

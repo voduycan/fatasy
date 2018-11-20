@@ -10,7 +10,7 @@
 ?>
 <?php  get_header(); ?>
 <!-- Top Panel - Blockchain winter camp -->
-<section id="carouselExampleIndicators" class="carousel slide product-panel" data-ride="carousel">
+<section id="carouselExampleIndicators" class="carousel slide product-panel faq-panel" data-ride="carousel">
   <div class="overflow full-device-width">
     <div class="over-lay"></div>
         <?php if( have_rows('images_s1_f')): $n = 0; ?>
@@ -35,9 +35,11 @@
         <div class="caption">
             <div class="cap">
                 <h1><?php echo $group['title_f']; ?></h1>
-                <div class="cap-scroll">
-                    <?php the_field('text_s1_f', $post->ID); ?>
-                </div>
+                <?php if(get_field('text_s1_f', $post->ID)): ?>
+                    <div class="cap-scroll">
+                        <?php the_field('text_s1_f', $post->ID); ?>
+                    </div>
+                <?php endif; ?>
                 <a href="<?php bloginfo('url'); ?>/product/#our-staff" class="btn btn-light" id="link-to-staff"><?php echo $group['button_f']; ?></a>
             </div>
            
@@ -130,7 +132,7 @@
     ?>
     <div class="over-lay"></div>
     <div class="row">
-        <div class="col-sm-6 text">
+        <div class="my-col-md-6 text">
             <h2><?php echo $group['title_s5']; ?></h2>
             <?php the_field('text_s5', $post->ID); ?>
             <div class="button">
@@ -138,7 +140,7 @@
                 <a target="_blank" href="<?php echo $group['learn_button_link_s5']; ?>" class="btn btn-light"><?php echo $group['learn_button_s5']; ?></a>
             </div>
         </div>
-        <div class="col-sm-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
+        <div class="my-col-md-6 image" style="background-image: url('<?php the_field('image_s5', $post->ID); ?>');">
         </div>
     </div>
   <?php endif; ?>

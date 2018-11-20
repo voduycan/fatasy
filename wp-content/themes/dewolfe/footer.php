@@ -18,12 +18,12 @@
         if($group):
     ?>
 	<div class="row">
-		<div class="col-12 col-sm-3 footer-logo">
+		<div class="col-12 col-sm-12 col-md-3 footer-logo">
 			<a href="<?php bloginfo('url'); ?>"><img src="<?php the_field('logo_footer', 'options');?>"></a>
 			<a class="email" href="mailto:edu@dewolfe.io"><?php echo $group['email']; ?></a>
 			
 		</div>
-		<div class="col-12 col-sm-6 menu d-flex">
+		<div class="col-12 col-sm-12 col-md-6 menu d-flex">
 			<ul>
 				<?php 
 	                 $menuLocations = get_nav_menu_locations(); 
@@ -44,7 +44,7 @@
 		<?php
 			if(($group['facebook'])||($group['twitter'])||($group['instagram'])): 
 		?>
-		<div class="col-12 col-sm-3 social d-flex">
+		<div class="col-12 col-sm-12 col-md-3 social d-flex">
 			<?php if($group['facebook']): ?>
 				<a target="_blank" href="<?php echo $group['facebook']; ?>"><span class="icon-facebook"></span></a>
 			<?php endif; ?>
@@ -56,7 +56,7 @@
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
-		<div class="col-12 col-sm-12 copy-right">
+		<div class="col-12 col-sm-12 col-md-12 copy-right">
 			<p><?php echo $group['copy_right']; ?></p>
 		</div>
 

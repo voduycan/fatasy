@@ -14,7 +14,6 @@
     background-image: url('../image/svg/left-arrow.svg');
     @include background-image;
     @media all and (max-width: 576px){
-        top: 30%;
         left: -15px;
     }
     @media all and (min-width: 992px){
@@ -32,7 +31,6 @@
     background-image: url('../image/svg/right-arrow.svg');
     @include background-image;
     @media all and (max-width: 576px){
-        top: 30%;
         right: -15px;
     }
     @media all and (min-width: 992px){

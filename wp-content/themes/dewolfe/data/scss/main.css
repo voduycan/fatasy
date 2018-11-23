@@ -364,7 +364,6 @@ html, body {
   box-sizing: border-box; }
 
 h2 {
-  line-height: 1.3;
   text-transform: uppercase;
   font-size: 32px;
   font-weight: 700;
@@ -376,7 +375,6 @@ h2 {
       font-size: 24px; } }
 
 h3 {
-  line-height: 1;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 26px; }
@@ -392,6 +390,9 @@ h5 {
   text-transform: capitalize;
   line-height: 1;
   letter-spacing: 0; }
+
+h1, h2, h3, h4, h5 {
+  line-height: 1.3; }
 
 h1 span, h2 span, h3 span, h4 span, h5 span, p span {
   font-weight: inherit !important;
@@ -1903,7 +1904,7 @@ footer {
         padding-left: 1.3rem;
         -webkit-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
-        .faq ul li .group .btn-collapse span {
+        .faq ul li .group .btn-collapse .icon-btn {
           position: absolute;
           font-size: 8px;
           right: 1rem;
@@ -1916,7 +1917,7 @@ footer {
         @media all and (max-width: 576px) {
           .faq ul li .group .btn-collapse {
             font-size: 14px; }
-            .faq ul li .group .btn-collapse span {
+            .faq ul li .group .btn-collapse .icon-bottom {
               font-size: 6px; } }
         .faq ul li .group .btn-collapse .icon-top {
           font-size: 9px; }

@@ -150,6 +150,9 @@ $(function() {
 		$('h5').wordBreakKeepAll();
 		$('p').wordBreakKeepAll();
 		$('ul li span').wordBreakKeepAll();
+		$('.faq .card-body').wordBreakKeepAll();
+		$('#exampleModal .modal-footer ul li').wordBreakKeepAll();
+		$('.faq .btn-collapse').wordBreakKeepAll();
 		$('.cap-scroll').jScrollPane();
 
         $("#scroll-down").click(function() {

@@ -101,12 +101,12 @@
                     ?>
                     <div class="group">
                         <button class="btn-collapse" type="button" data-toggle="collapse" data-target="#collapseExample-<?php echo $x; ?><?php echo $z; ?>" aria-expanded="false" aria-controls="collapseExample">
-                            <?php echo $ask; ?>
+                            <span><?php echo $ask; ?></span>
                             <span class="icon-bottom icon-btn"></span>
                         </button>
                         <div class="collapse" id="collapseExample-<?php echo $x; ?><?php echo $z; ?>">
                           <div class="card card-body">
-                            <?php echo $answer; ?>
+                            <span><?php echo $answer; ?></span>
                           </div>
                         </div>
                     </div>
